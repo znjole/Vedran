@@ -1,0 +1,477 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Vedran Anzulović</title>
+
+	<link rel="stylesheet" type="text/css" href="Stranica.css" />
+
+</head>
+
+
+<body>
+
+	<nav>
+
+		<ul>
+			<li class="shadow">
+				<a href="Pocetna.html">Početna</a>
+			</li>
+			<li class="shadow">
+				<a class="shadow" href="Zivotopis.html">Životopis</a>
+			</li>
+			<li class="shadow">
+				<a href="Logika.html">Logika</a>
+			</li>
+		</ul>
+	</nav>
+	<div id="MainContainer">
+		<div class="left">
+			<nav class="izbornik">
+				<ul class="izbornik">
+					<li class="izbornik">
+						<a class="izbornik" href="Iskaznalogika.html">Iskazna logika</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Prirocnalogika.html">Priročna logika</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Istinitosnatablica.html">Istinitosna tablica</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Istinitosnostablo.html">Istinitosno stablo</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Dokaz.html">Dokaz</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="PKiDNO.html">PKiDNO</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Registarskistroj.html">Registarski stroj</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+		<div class="tekst">
+
+			<h3>
+				Pogodba i njezin nijek
+			</h3>
+
+			<p>
+				Što se tiče pogodbe, za nju također znamo kako je istinita u čak tri slučaja, što nam odmah sugerira 
+				kako će se u slučaju pogodbe stablo također početi granati, a kao razgranate vrijednosti dobit ćemo
+				zanijekani P s lijeve strane i Q s desne strane. To je iz tog razloga, što znamo kako nam pogodba
+				može biti istinita u dva slučaja; a oni su bilo da je prednjak neistinit, bilo da je posljedak istinit.
+				Te slučajeve stoga u stablu izražavamo na sljedeći način:
+			</p>
+
+			<div class="canvas-container">
+				<canvas id="pogodba" onmouseover="mijenjaj1(this)" onmouseout="mijenjaj2(this)">
+
+				</canvas>
+			</div>
+
+			<p>
+				Nijek pogodbe nam je s druge strane istinit u samo jednom slučaju i to upravo u onom u kojem nam je 
+				pogodba neistinita, odnosno u slučaju kada joj je prednjak istinit, a posljedak neistinit. Ovdje bismo
+				mogli navesti primjer "Ako kiša pada, onda ulice nisu mokre". To bi bio primjer neistinite pogodbe, jer
+				iako ulice mogu biti mokre i od nečeg drugoga, kao što je recimo zlijevanje vodom iz kamiona čistača 
+				ulica, ona ne može ne biti mokra ako ju je zalila kiša. Idemo pogledati primjer pravila:
+			</p>
+
+			<div class="canvas-container">
+				<canvas id="nijekpogodbe" onmouseover="mijenjaj1(this)" onmouseout="mijenjaj2(this)">
+
+				</canvas>
+			</div>
+
+			<h3>
+				Dvopogodba i njezin nijek
+			</h3>
+
+			<p>
+				Na kraju nam je još ostalo objasniti pravilo dvopogodbe. Dvopogodba je specifična po tome što ona nije 
+				istinta niti u jednom, niti u tri slučaja, kako smo imali primjere do sad, već je ona istinita u dva
+				slučaja. Što to znači? To znači kako će nam se dvopogodba, kako je istinita u više od jednog slučaja
+				razgranati, ali kako nije istinita u tri slučaja, onda će nam se njezini gradivni elementi, odnosno
+				podiskazi također i potpisivati jedan ispod drugog. Tako ćemo s lijeve strane napisati prvi slučaj 
+				u kojem je dvopogodba istinita, odnosno P i Q, a s desne strane drugi slučaj, odnosno onaj u kojem su 
+				i P i Q zanijekani. To će onda izgledati ovako:
+			</p>
+
+			<div class="canvas-container">
+				<canvas id="dvopogodba" onmouseover="mijenjaj1(this)" onmouseout="mijenjaj2(this)">
+
+				</canvas>
+			</div>
+
+			<p>
+				Što se tiče nijeka dvopogodbe, on nam je također istinit u dva slučaja te će nam se i on granati i 
+				potpisivati, ali kako su uvjeti njegove istinitosti različiti od uvjeta istinitosti dvopogodbe,
+				to ćemo onda morati i izraziti u samome stablu. Uvjet istinitosti nijeka dvopogodbe je sljedeći:
+				dvopogodba je istinita bilo da joj je prednjak istinit, a posljedak neistinit, ili u slučaju da joj 
+				je prednjak neistinit, a posljedak istinit. to ćemo onda napisati na sljedeći način:
+			</p>
+
+			<div class="canvas-container">
+				<canvas id="nijekdvopogodbe" onmouseover="mijenjaj1(this)" onmouseout="mijenjaj2(this)">
+
+				</canvas>
+			</div>
+
+			<p>
+				3. U nastavku ćemo vidjeti kako se i u kojim slučajevima treba služiti istinitosnim stablom. Pogledajmo
+				kako uz pomoć istinitosnog stabla možemo provjeriti valjanost nekog iskaza. Neka primjerice imamo sljedeći
+				iskaz: (AvB)→(AvB). Nije važno što taj iskaz znači na hrvatskom jeziku. Istinitosnim stablom u stvari 
+				samo provjeravamo može li taj iskaz postojati u hrvatskom jeziku, a da bude uvijek istinit. Prvi korak
+				kojeg ćemo napraviti jet taj da zaniječemo čitav iskaz. Zašto? Zbog toga što na taj način u stvari želimo
+				vidjeti hoćemo li uspjeti izazvati proturječje u zanijekanom iskazu. Ukoliko uspijemo izazvati proturječja
+				u svim granama, to onda znači kako je taj iskaz valjan, odnosno istinit je za svako tumačenje, jer smo
+				kad smo ga zanijekali izazvali proturječje baš svugdje. Pogledajmo kako bi izgledalo stablo za ovaj iskaz:
+			</p>
+
+			<div class="canvas-container">
+				<canvas id="iskaz" onmouseover="mijenjaj1(this)" onmouseout="mijenjaj2(this)">
+
+				</canvas>
+			</div>
+
+			<p>
+				Što to sad sve znači? Možemo si zamisliti kako imamo sljedeća tumačenja za iskaze A i B. Neka A bude
+				"Gledam televizor", a B neka bude "Slušam radio". Tako bismo u stvari dobili iskaz na hrvatskom koji 
+				zvuči ovako: "Ako gledam televizor ili slušam radio, onda gledam televizor ili slušam radio". Umjesto
+				te dvije rečenice mogli smo staviti bilo koje druge dvije rečenice, a taj iskaz bi u Li jeziku uvijek
+				bio istinit, odnosno valjan. Za takav iskaz također možemo reći kako je logički istinit. No, kako smo
+				uopće rješavali ovo stablo?
+
+				<br>
+				Prvo što smo napravili, to je da smo u prvom retku zanijekali cijeli iskaz, čime u stvari želimo
+				provjeriti što ćemo dobiti ako kažemo: "Nije tako da ako gledam televizor ili slušam radio, onda gledam 
+				televizor ili slušam radio". Već sad možemo vidjeti kako to ne može biti istina, jer ako gledam televizor
+				ili slušam radio, onda ne mogu raditi ništa drugo nego barem jedno od to dvoje da bi taj iskaz bio 
+				istinit. Ukoliko primjerice trčim ili hodam, a ne gledam televizor ili slušam radio, onda taj iskaz
+				nikako ne može biti valjan. 
+
+				<br>
+				Dakle, nakon što smo učinili taj prvi korak i zanijekali cijeli iskaz, moramo ga rastaviti na njegove
+				sastavne (atomarne) dijelove, odnosno podiskaze, sve dok ne dobijemo po jedno iskazno slovo iz svakog 
+				složenog iskaza. Tako smo kao prvi korak izveli rastavljanje čitavog iskaza iz prvog retka na dva osnovna
+				podiskaza. Kako je glavni poveznik za cijeli iskaz pogodba, a čitav iskaz je zanijekan, zbog toga smo
+				koristili pravilo rastavljanja zanijekane pogodbe te smo prednjak prepisali, zanijekali posljedak te ih 
+				na kraju krajeva, potpisali jedan ispod drugog.
+			</p>
+
+			<p style="text-align:right">
+				<a class="lista" href="Istinitosnostablo.html">1</a>
+				<a class="lista" href="Istinitosnostablo1.html">2</a>
+				<a class="lista" href="Istinitosnostablo2.html">3</a>
+				<a class="lista" href="Istinitosnostablo3.html">4</a>
+			</p>
+		</div>
+	</div>
+
+	<script>
+
+	var c=document.getElementById("pogodba");
+	var ctx=c.getContext("2d");
+
+	ctx.font = 'normal 26pt Calibri';
+	ctx.fillStyle = 'black';
+	ctx.fillText("1",60,40);
+	ctx.fillText("2",60,90);
+	ctx.fillText("P",120,40);
+	ctx.fillText("→",145,40);
+	ctx.fillText("Q",180,40);
+	ctx.fillText("¬P",80,90);
+	ctx.fillText("Q",200,90);
+	ctx.fillText("1",230,90);
+	ctx.fillText("→",250,90);
+
+	//grane//
+	ctx.beginPath();
+	ctx.moveTo(145,40);
+	ctx.lineTo(110,60);
+	ctx.lineWidth = 3;
+	ctx.stroke();
+	ctx.beginPath();
+	ctx.moveTo(170,40);
+	ctx.lineTo(210,60);
+	ctx.lineWidth = 3;
+	ctx.stroke();
+
+	// kvačica//
+	ctx.beginPath();
+	ctx.moveTo(220,40);
+	ctx.lineTo(210,25);
+	ctx.moveTo(220,40);
+	ctx.lineTo(240,10);
+	ctx.lineWidth = 3;
+	ctx.stroke();
+
+	function mijenjaj1(obj)
+	{
+	obj.style.backgroundColor="#808080"
+	}
+
+	function mijenjaj2(obj)
+	{
+	obj.style.backgroundColor=""
+	}
+	</script>
+
+	<script>
+
+	var c=document.getElementById("nijekpogodbe");
+	var ctx=c.getContext("2d");
+
+	ctx.font = 'normal 26pt Calibri';
+	ctx.fillStyle = 'black';
+	ctx.fillText("1",40,40);
+	ctx.fillText("2",40,90);
+	ctx.fillText("3",40,140);
+	ctx.fillText("¬",80,40);
+	ctx.fillText("(",100,40);
+	ctx.fillText("P",120,40);
+	ctx.fillText("→",145,40);
+	ctx.fillText("Q",180,40);
+	ctx.fillText(")",210,40);
+	ctx.fillText("P",150,90);
+	ctx.fillText("¬Q",130,140);
+	ctx.fillText("1",230,90);
+	ctx.fillText("1",230,140);
+	ctx.fillText("¬→",250,90);
+	ctx.fillText("¬→",250,140);
+	ctx.stroke();
+	// kvačica//
+	ctx.beginPath();
+	ctx.moveTo(240,40);
+	ctx.lineTo(230,25);
+	ctx.moveTo(240,40);
+	ctx.lineTo(260,10);
+	ctx.lineWidth = 3;
+	ctx.stroke();
+
+	function mijenjaj1(obj)
+	{
+	obj.style.backgroundColor="#808080"
+	}
+
+	function mijenjaj2(obj)
+	{
+	obj.style.backgroundColor=""
+	}
+	</script>
+
+	<script>
+
+	var c=document.getElementById("dvopogodba");
+	var ctx=c.getContext("2d");
+
+	ctx.font = 'normal 26pt Calibri';
+	ctx.fillStyle = 'black';
+	ctx.fillText("1",60,40);
+	ctx.fillText("2",60,90);
+	ctx.fillText("3",60,140);
+	ctx.fillText("P",120,40);
+	ctx.fillText("↔",140,40);
+	ctx.fillText("Q",190,40);
+	ctx.fillText("P",103,90);
+	ctx.fillText("Q",100,140);
+	ctx.fillText("¬P",185,90);
+	ctx.fillText("¬Q",185,140);
+	ctx.fillText("1",230,90);
+	ctx.fillText("1",230,140);
+	ctx.fillText("↔",250,90);
+	ctx.fillText("↔",250,140);
+	ctx.stroke();
+
+	//grane//
+	ctx.beginPath();
+	ctx.moveTo(145,40);
+	ctx.lineTo(115,60);
+	ctx.lineWidth = 3;
+	ctx.stroke();
+	ctx.beginPath();
+	ctx.moveTo(180,40);
+	ctx.lineTo(210,60);
+	ctx.lineWidth = 3;
+	ctx.stroke();
+
+	// kvačica//
+	ctx.beginPath();
+	ctx.moveTo(230,40);
+	ctx.lineTo(220,25);
+	ctx.moveTo(230,40);
+	ctx.lineTo(250,10);
+	ctx.lineWidth = 3;
+	ctx.stroke();
+
+	function mijenjaj1(obj)
+	{
+	obj.style.backgroundColor="#808080"
+	}
+
+	function mijenjaj2(obj)
+	{
+	obj.style.backgroundColor=""
+	}
+	</script>
+
+	<script>
+
+	var c=document.getElementById("nijekdvopogodbe");
+	var ctx=c.getContext("2d");
+
+	ctx.font = 'normal 26pt Calibri';
+	ctx.fillStyle = 'black';
+	ctx.fillText("1",60,40);
+	ctx.fillText("2",60,90);
+	ctx.fillText("3",60,140);
+	ctx.fillText("¬",80,40);
+	ctx.fillText("(",100,40);
+	ctx.fillText("P",120,40);
+	ctx.fillText("↔",140,40);
+	ctx.fillText("Q",190,40);
+	ctx.fillText(")",210,40);
+	ctx.fillText("¬P",103,90);
+	ctx.fillText("Q",100,140);
+	ctx.fillText("P",185,90);
+	ctx.fillText("¬Q",185,140);
+	ctx.fillText("1",230,90);
+	ctx.fillText("1",230,140);
+	ctx.fillText("↔",250,90);
+	ctx.fillText("↔",250,140);
+	ctx.stroke();
+
+	//grane//
+	ctx.beginPath();
+	ctx.moveTo(145,40);
+	ctx.lineTo(115,60);
+	ctx.lineWidth = 3;
+	ctx.stroke();
+	ctx.beginPath();
+	ctx.moveTo(180,40);
+	ctx.lineTo(210,60);
+	ctx.lineWidth = 3;
+	ctx.stroke();
+
+	// kvačica//
+	ctx.beginPath();
+	ctx.moveTo(250,40);
+	ctx.lineTo(240,25);
+	ctx.moveTo(250,40);
+	ctx.lineTo(270,10);
+	ctx.lineWidth = 3;
+	ctx.stroke();
+
+	function mijenjaj1(obj)
+	{
+	obj.style.backgroundColor="#808080"
+	}
+
+	function mijenjaj2(obj)
+	{
+	obj.style.backgroundColor=""
+	}
+	</script>
+
+	<script>
+
+	var c=document.getElementById("iskaz");
+	var ctx=c.getContext("2d");
+
+	ctx.font = 'normal  Calibri';
+	ctx.fillStyle = 'black';
+	ctx.fillText("1",20,20);
+	ctx.fillText("2",20,40);
+	ctx.fillText("3",20,60);
+	ctx.fillText("4",20,80);
+	ctx.fillText("5",20,100);
+	ctx.fillText("6",20,120);
+	ctx.fillText("¬",75,20);
+	ctx.fillText("(",85,20);
+	ctx.fillText("(",95,20);
+	ctx.fillText("A",105,20);
+	ctx.fillText("v",115,20);
+	ctx.fillText("B",125,20);
+	ctx.fillText(")",135,20);
+	ctx.fillText("→",145,20);
+	ctx.fillText("(",160,20);
+	ctx.fillText("A",170,20);
+	ctx.fillText("v",180,20);
+	ctx.fillText("B",190,20);
+	ctx.fillText(")",200,20);
+	ctx.fillText(")",210,20);
+	ctx.fillText("A",135,40);
+	ctx.fillText("v",148,40);
+	ctx.fillText("B",160,40);
+	ctx.fillText("¬",115,60);
+	ctx.fillText("(",125,60);
+	ctx.fillText("A",135,60);
+	ctx.fillText("v",148,60);
+	ctx.fillText("B",160,60);
+	ctx.fillText(")",170,60);
+	ctx.fillText("1 ¬ →",220,40);
+	ctx.fillText("1 ¬ →",220,60);
+	ctx.fillText("¬ A",140,80);
+	ctx.fillText("¬ B",140,100);
+	ctx.fillText("3 ¬ v",220,80);
+	ctx.fillText("3 ¬ v",220,100);
+	ctx.fillText("A",100,120);
+	ctx.fillText("B",190,120);
+	ctx.fillText("2 v",220,120);
+	ctx.fillText("X",100,130);
+	ctx.fillText("X",190,130);
+
+	//grane//
+	ctx.beginPath();
+	ctx.moveTo(140,105);
+	ctx.lineTo(110,110);
+	ctx.moveTo(160,105);
+	ctx.lineTo(190,110);
+	ctx.stroke();
+
+	// kvačice//
+	ctx.beginPath();
+	ctx.moveTo(230,20);
+	ctx.lineTo(225,15);
+	ctx.moveTo(230,20);
+	ctx.lineTo(235,10);
+	ctx.lineWidth = 1;
+	ctx.stroke();
+
+	ctx.beginPath();
+	ctx.moveTo(180,40);
+	ctx.lineTo(175,35);
+	ctx.moveTo(180,40);
+	ctx.lineTo(185,30);
+	ctx.lineWidth = 1;
+	ctx.stroke();
+
+	ctx.beginPath();
+	ctx.moveTo(180,60);
+	ctx.lineTo(175,55);
+	ctx.moveTo(180,60);
+	ctx.lineTo(185,50);
+	ctx.lineWidth = 1;
+	ctx.stroke();
+
+	function mijenjaj1(obj)
+	{
+	obj.style.backgroundColor="#808080"
+	}
+
+	function mijenjaj2(obj)
+	{
+	obj.style.backgroundColor=""
+	}
+
+	</script>
+
+
+</body>
+
+</html>

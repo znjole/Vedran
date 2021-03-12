@@ -1,0 +1,305 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Vedran Anzulović</title>
+
+	<link rel="stylesheet" type="text/css" href="Stranica.css" />
+        
+	<script>
+
+	function mijenjaj1(id)
+	{
+	document.getElementById("zad1").innerHTML="(V→I)∧(M→¬I)";
+	}
+
+	function makni1(id)
+	{
+	document.getElementById("zad1").innerHTML="";
+	}
+
+	function mijenjaj2(id)
+	{
+	document.getElementById("zad2").innerHTML="(I∨M)∧(K→(¬I∧¬M))";
+	}
+
+	function makni2(id)
+	{
+	document.getElementById("zad2").innerHTML="";
+	}
+
+	function mijenjaj3(id)
+	{
+	document.getElementById("zad3").innerHTML="M→(A∧I)";
+	}
+
+	function makni3(id)
+	{
+	document.getElementById("zad3").innerHTML="";
+	}
+
+	function mijenjaj4(id)
+	{
+	document.getElementById("zad4").innerHTML="¬(M→¬I)";
+	}
+
+	function makni4(id)
+	{
+	document.getElementById("zad4").innerHTML="";
+	}
+
+	function mijenjaj5(id)
+	{
+	document.getElementById("zad5").innerHTML="((I∧M)↔A)∧(K→¬A)";
+	}
+
+	function makni5(id)
+	{
+	document.getElementById("zad5").innerHTML="";
+	}
+
+
+	function mOver(x)
+	{
+	x.style.color="#ff0000";
+	}
+
+	function mOut(x)
+	{
+	x.style.color="#000000";
+	}
+
+	function mver(x)
+	{
+	x.style.color="#CC00AB";
+	}
+
+	function izvan(x)
+	{
+	x.style.color="#000000";
+	}
+
+	</script>
+
+</head>
+
+<body>
+
+	<nav>
+
+		<ul>
+			<li class="shadow">
+				<a href="Pocetna.html">Početna</a>
+			</li>
+			<li class="shadow">
+				<a class="shadow" href="Zivotopis.html">Životopis</a>
+			</li>
+			<li class="shadow">
+				<a href="Logika.html">Logika</a>
+			</li>
+		</ul>
+	</nav>
+
+	<div id="MainContainer">
+		<div class="left">
+			<nav class="izbornik">
+				<ul class="izbornik">
+					<li class="izbornik">
+						<a class="izbornik" href="Iskaznalogika.html">Iskazna logika</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Prirocnalogika.html">Priročna logika</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Istinitosnatablica.html">Istinitosna tablica</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Istinitosnostablo.html">Istinitosno stablo</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Dokaz.html">Dokaz</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="PKiDNO.html">PKiDNO</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Registarskistroj.html">Registarski stroj</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+		<div class="tekst">
+
+			<h3>
+				Interpunkcija
+			</h3>
+
+			<p>
+				Kao i u svakom drugom jeziku, i u logičkom moramo imati neke interpunkcijske znakove.
+				Samo što to u ovom slučaju neće biti znakovi ", . ? ! ; :", već će to biti ) i (.
+				Ako za primjer uzmemo iskaz koji na hrvatskom jeziku glasi ovako: "Zovem se Ivan i 
+				ako napišem zadaću, smjet ću ići u skupi disko". Na Li jeziku to će onda 
+				izgledati ovako: (I∧(Z→D)). Neformalno možemo ispustiti vanjske zagrade, tako da 
+				taj iskaz može izgledati ovako: I∧(Z→D). 
+			</p>
+			
+			<p>
+				Iskaz I∧(Z→D) sastoji se od više podiskaza, kojima je u ovom slučaju glavni poveznik
+				konjunkcija. Kada bismo rastavili taj iskaz na sve podiskaze, dobili bismo sljedeće
+				podiskaze: I∧(Z→D), (Z→D), I, Z, D. Da ne bi bilo zabune, iskaz I∧(Z→D) je također 
+				sam svoj podiskaz.
+			</p>
+
+			<h3>
+				Kako slažemo iskaze u Li?
+			</h3>
+
+			<p>
+				U Li jeziku uvijek moramo paziti da nam se između zagrada, tj. interpunkcija nikada ne
+				nađe više od dva podiskaza i jednog poveznika, <u><strong>osim</strong></u> u slučaju kada
+				su poveznici samo konjunkcije ili samo disjunkcije. Primjer:
+			</p>
+
+			<p>
+				<span class="purple">(P<span class="red">→</span>(((Q→R)∨R)∨P))</span>
+				ovdje je glavni poveznik → i njegova dva podiskaza:
+			</p>
+
+			<p>
+				P i
+			</p>
+
+			<p>
+				<span class="purple">(((Q→R)∨R)<span class="red">∨</span>P)</span> dalje je 
+				glavni poveznik ∨ i njgova dva podiskaza:
+			</p>
+
+			<p>
+				P i
+			</p>
+
+			<p>
+				<span class="purple">((Q→R)<span class="red">∨</span>R)</span> nastavljamo s 
+				glavnim poveznikom → i njegova dva podiskaza:
+			</p> 
+
+			<p>
+				R i
+			</p>
+
+			<p>
+				<span class="purple">(Q<span class="red">→</span>R)</span> i završavamo sa 
+				zadnjim poveznikom → i njegova dva podiskaza:
+			</p>
+
+			<p>
+				Q i
+			</p>
+
+			<p>
+				R
+			</p>
+
+			<p>
+				Ukoliko bi se dogodilo da su nam poveznice u tom iskazu bile samo konjunkcije ili 
+				disjunkcije, onda bismo taj iskaz mogli zapisati ovako:
+			</p>
+
+			<p>
+				(P∨Q∨Q∨R∨R) ili ovako:
+			</p>
+
+			<p>
+				(P∧Q∧Q∧R∧R)
+			</p>
+
+			<h3>
+				Zadatci za vježbu
+			</h3>
+
+			<p>
+				U ovom dijelu stranice nalaze se neki zadatci za vježbu, uz pripadajuća rješenja.
+			</p>
+
+			<p>
+				1.Ivan će ići planinariti ako će biti lijepo vrijeme, ali neće ići ako ide i Miroslav.
+			</p>
+
+			<p>
+				I - Ivan ide planinariti, V - lijepo vrijeme, M - Mirolav ide planinariti
+			</p>
+
+			<p onmouseover="style.color='red'" onmouseout="style.color='black'" onclick="mijenjaj1(this)">
+				Klikni za rješenje
+			</p>
+
+			<p id="zad1" onmouseover="mver(this)" onmouseout="izvan(this)" onclick="makni1(this)"></p>
+
+			<p>
+				2.Bilo Ivan, bilo Miroslav ići će na planinarenje, no niti Ivan, niti Miroslav neće ići 
+				ako će padati kiša.
+			</p>
+
+			<p>
+				K - pada kiša
+			</p>
+
+			<p onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="mijenjaj2(this)">
+				Klikni za rješenje
+			</p>
+
+			<p id="zad2" onmouseover="mver(this)" onmouseout="izvan(this)" onclick="makni2(this)"></p>
+
+			<p>
+				Ana će ići na kupanje s Ivanom ako će Miroslav ići na planinarenje.
+			</p>
+
+			<p>
+				A - Ana ide na kupanje I - Ivan ide na kupanje
+			</p>
+
+			<p onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="mijenjaj3(this)">
+				Klikni za rješenje
+			</p>
+
+			<p id="zad3" onmouseover="mver(this)" onmouseout="izvan(this)" onclick="makni3(this)"></p>
+
+			<p>
+				4. Nije tako da ako će Miroslav ići na planinarenje, da onda Ivan neće ići na planinarenje.
+			</p>
+
+			<p onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="mijenjaj4(this)">
+				Klikni za rješenje
+			</p>
+
+			<p id="zad4" onmouseover="mver(this)" onmouseout="izvan(this)" onclick="makni4(this)"></p>
+
+			<p>
+				5. Ako i samo ako Ivan i Miroslav napišu zadaću, Ana će im se pridružiti u igri, ali ne 
+				i ako će padati kiša.
+			</p>
+
+			<p>
+				I - Ivan piše zadaću M - miroslav piše zadaću A - Ana se pridružuje igri K - pada kiša
+			</p>
+
+			<p onmouseover="mOver(this)" onmouseout="mOut(this)" onclick="mijenjaj5(this)">
+				Klikni za rješenje
+			</p>
+
+			<p id="zad5" onmouseover="mver(this)" onmouseout="izvan(this)" onclick="makni5(this)"></p>
+
+
+			<p style="text-align:right">
+				<a class="lista" href="Iskaznalogika.html">1</a>
+				<a class="lista" href="Iskaznalogika1.html">2</a>
+				<a class="lista" href="Istinitosnatablica.html">→</a>
+			</p>
+
+		</div>
+	</div>
+
+</body>
+
+</html>

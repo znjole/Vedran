@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Vedran Anzulović</title>
+
+	<link rel="stylesheet" type="text/css" href="Stranica.css" />
+
+</head>
+
+<body>
+
+	<nav>
+
+		<ul>
+			<li class="shadow">
+				<a href="Pocetna.html">Početna</a>
+			</li>
+			<li class="shadow">
+				<a class="shadow" href="Zivotopis.html">Životopis</a>
+			</li>
+			<li class="shadow">
+				<a href="Logika.html">Logika</a>
+			</li>
+		</ul>
+	</nav>
+
+	<div id="MainContainer">
+		<div class="left">
+			<nav class="izbornik">
+				<ul class="izbornik">
+					<li class="izbornik">
+						<a class="izbornik" href="Iskaznalogika.html">Iskazna logika</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Prirocnalogika.html">Priročna logika</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Istinitosnatablica.html">Istinitosna tablica</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Istinitosnostablo.html">Istinitosno stablo</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Dokaz.html">Dokaz</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="PKiDNO.html">PKiDNO</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Registarskistroj.html">Registarski stroj</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	
+		<div class="tekst">
+
+			<p>
+				Nadalje, sa strane smo napisali odakle smo dobili iskaze A v B u drugom retku i ¬(AvB) u trećem retku,
+				a kraj iskaza u prvom retku smo stavili kvačicu kako bismo znali da smo ga se rješli, odnosno da smo 
+				ga rastavili na njegove sastavne poddijelove. 
+
+				<br>
+				Sljedeći korak je rastaviti tako dobivene podiskaze na još jednostavnije podiskaze. U potpunosti nam
+				svejedno kojim ćemo redoslijedom rastavljati dobivene podiskaze, ali važno je da ih na kraju krajeva
+				sve rastavimo. Iako nam je redoslijed rastavljanja nevažan, ovdje je dobro napomenuti kako bi zbog 
+				jednostavnosti trebali gledati da nam se stablo počne što kasnije granati, jer ako ga prerano razgranamo,
+				u svakoj grani ćemo morti pisati rastavljene podiskaze, što će nam biti više posla za obavljanje.
+				Ja sam u primjeru upravo zbog jednostavnosti prvo išao rastavljati nijek disjunkcije iz trećeg reda te
+				sam tako dobio četvrti i peti redak, sa zanijekanim podiskazima nijeka disjunkcije u trećem retku.
+
+				<br>
+				Za kraj nam je ostao još nerastavljeni iskaz u drugom retku, a on je obična disjunkcija, te ćemo
+				zbog toga razgranati stablo i u svaku od grana napisati po jedan od pripadajućih podiskaza te disjunkcije,
+				koji naravno, zbog pravila o rastavljanju disjunkcije nisu zanijekani. Što sad možemo vidjeti? Sad možemo
+				vidjeti kako u šestom retku s lijeve strane imamo iskaz A, dok nam se <b>na istom putu</b> u četvrtom 
+				retku javlja iskaz ¬A, što znači kako smo u toj grani uspjeli izazvati proturječje, odnosno gledano
+				na hrvatskom jeziku rekli smo kako i gledamo televizor i ne gledamo televizor, pod pretpostavkom da 
+				nije tako da ako gledamo televizor ili slušamo radio, da onda gledamo televizor ili slušamo radio.
+				Kako ne možemo i gledati i ne gledati televizor (barem ne u isto vrijeme), onda zatvaramo tu granu
+				stabla, tako što ispod iskaza A kojeg smo dobili u šestom retku pišemo x, što označava zatvorenu granu.
+				
+				<br>
+				Istu stvar smo napravili i s desnom granom, jer nam se na tom putu javljaju i B i ¬B, te smo sa 
+				zatvaranjem te grane u stvari zatvorili i cijelo stablo te vidjeli kako je zanijekani iskaz <b>neistinit</b>
+				u svakom slučaju, što onda znači kako nezanijekani iskaz <b>mora</b> biti istinit u <b>svakom</b>
+				slučaju. Sjetimo se, ako je iskaz istinit u svakom slučaju, onda je i valjan te smo ovim stablom
+				upravo provjerili i valjanost samog iskaza (AvB)→(AvB).
+			</p>
+
+			<p>
+				Što se tiče provjere zadovoljivosti nekog iskaza, nju ćemo provjerit na isti način, s tom razlikom 
+				što će nam za utvrđivanje zadovoljivosti nekog iskaza biti dovoljno da nam se zatvori barem jedna
+				grana istinitosnog stabla, jer sjetimo se, neki iskaz je zadovoljiv, ako je istinit za barem jedno 
+				tumačenje. Ako nam se put stabla zatvori u jednoj grani, to onda znači kako je iskaz istinit upravo
+				za to tumačenje te tako znamo da je iskaz zadovoljiv. Dakako, ako je neki iskaz valjan, onda to 
+				automatski znači i kako je zadovoljiv, jer je time što je istinit za svako tumačenje istinit i za 
+				barem jedno, no ako je iskaz zadovoljiv, ne mora automatski biti i valjan, jer može, ali i ne mora 
+				biti istinit za sva tumačenja. 
+			</p>
+
+			<p>
+				Provjera valjanosti nekog zaključka istinitosnim stablom je takva da sve premise koje se nalaze u njemu
+				prepišemo, a na kraju stavimo zaglavak, kojeg naravno zaniječemo te ako nam se nakon rastavljanja svih
+				iskaza sve grane stabla zatvore, onda možemo zaključiti kako nam je zaključak valjan. Uzmimo primjerice
+				sljedeći zaključak:
+			</p>
+
+			<p>
+				<br>¬C^D 		           					 
+				<br>¬(B^¬C) 	
+				<br>¬B→A		
+				<br>------------
+				<br>¬C→A
+			</p>
+
+			<div class="canvas-container">
+				<canvas id="zaključak" onmouseover="mijenjaj1(this)" onmouseout="mijenjaj2(this)">
+
+				</canvas>
+			</div>
+
+			<p>
+				Ovdje možemo primjetiti kako je zaključak o kojem je riječ valjan. Valjan je zbog toga što smo pod 
+				pretpostavkom neistinitosti zaglavka uspjeli izazvati proturječje u svim granama tog stabla. U ovom 
+				zaključku možemo primjetiti kako nigdje nemamo iskaz D i njegov nijek na putu. Iako je to tako, na 
+				putu na kojem se javlja iskaz D smo uspjeli izazvati proturječje iz drugih iskaza. Kako je tome tako,
+				čitava grana nam je nevaljana, bez obzira što na njezinom putu imamo iskaz koji ne proturječi sam sebi.
+				<br>
+				U ovom stablu također možemo vidjeti kako smo u desetom retku izveli B iz devetog retka u kojem
+				imamo iskaz ¬ ¬ B. Iako to pravilo nisam naveo, ono postoji i njme se treba koristiti u formalnom obliku,
+				dok ga neformalno možemo izostaviti. To se pravilo zove eliminacija nijeka, a koristimo ga svaki put
+				kad imamo paran broj nijekova ispred nekog iskaza, kako bsmo pojednostavili isti. Tako ukoliko imamo
+				dva nijeka, ustvari imamo iskaz istog značenja kao i iskaz bez nijeka. Primjerice: "nije tako da nisam
+				gledao televizor" znači upravo to da sam u stvari gledao televizor. Upravo zbog pojednostavljivanja
+				reći ćemo da smo gledali televizor. Mogli bismo reći i "nije tako da nije tako da nisam gledao televizor".
+				U toj rečenici već imamo tri nijeka (¬ ¬ ¬ B). Jednostavnije rečeno: "nije tako da sam gledao televizor",
+				ili "nisam gledao televizor" odnosno ¬ B.
+			</p>
+
+			<p style="text-align:right">
+				<a class="lista" href="Istinitosnostablo.html">1</a>
+				<a class="lista" href="Istinitosnostablo1.html">2</a>
+				<a class="lista" href="Istinitosnostablo2.html">3</a>
+				<a class="lista" href="Istinitosnostablo3.html">4</a>
+			</p>
+		</div>
+	</div>
+
+<script>
+
+var c=document.getElementById("zaključak");
+var ctx=c.getContext("2d");
+
+ctx.font = 'normal 10pt Calibri';
+ctx.fillStyle = 'black';
+
+//retci//
+ctx.fillText("1",20,12);
+ctx.fillText("2",20,24);
+ctx.fillText("3",20,36);
+ctx.fillText("4",20,48);
+ctx.fillText("5",20,60);
+ctx.fillText("6",20,72);
+ctx.fillText("7",20,84);
+ctx.fillText("8",20,96);
+ctx.fillText("9",20,113);
+ctx.fillText("10",20,123);
+ctx.fillText("11",20,140);
+
+//stablo//
+ctx.fillText("¬ C ^ D",135,12);
+ctx.fillText("¬ ( B ^ ¬ C )",125,24);
+ctx.fillText("¬ B → A",130,36);
+ctx.fillText("¬ ( ¬ C → A )",123,48);
+ctx.fillText("¬ C",145,60);
+ctx.fillText("D",150,72);
+ctx.fillText("¬ C",145,84);
+ctx.fillText("¬ A",145,96);
+ctx.fillText("¬ ¬ B",90,113);
+ctx.fillText("A",200,113);
+ctx.fillText("x",201,123);
+ctx.fillText("B",100,123);
+ctx.fillText("¬ B",45,140);
+ctx.fillText("¬ ¬ C",135,140);
+ctx.fillText("x",52,149);
+ctx.fillText("x",145,149);
+
+//opravdanja//
+
+ctx.fillText("1 ^",240,60);
+ctx.fillText("1 ^",240,72);
+ctx.fillText("4 ¬ →",240,84);
+ctx.fillText("4 ¬ →",240,96);
+ctx.fillText("3 →",239,113);
+ctx.fillText("9 ¬ ¬",239,123);
+ctx.fillText("2 ¬ ^",239,140);
+
+//dakle//
+ctx.beginPath();
+ctx.moveTo(120,38);
+ctx.lineTo(195,38);
+ctx.lineWidth = 1;
+ctx.stroke();
+
+//kvačice//
+
+ctx.beginPath();
+ctx.moveTo(210,12);
+ctx.lineTo(205,7);
+ctx.moveTo(210,12);
+ctx.lineTo(215,2);
+ctx.moveTo(210,24);
+ctx.lineTo(205,19);
+ctx.moveTo(210,24);
+ctx.lineTo(215,14);
+ctx.moveTo(210,36);
+ctx.lineTo(205,31);
+ctx.moveTo(210,36);
+ctx.lineTo(215,26);
+ctx.moveTo(210,48);
+ctx.lineTo(205,43);
+ctx.moveTo(210,48);
+ctx.lineTo(215,38);
+
+ctx.moveTo(130,113);
+ctx.lineTo(125,108);
+ctx.moveTo(130,113);
+ctx.lineTo(135,103);
+
+ctx.lineWidth = 1;
+ctx.stroke();
+
+//grane//
+ctx.beginPath();
+ctx.moveTo(145,100);
+ctx.lineTo(120,105);
+ctx.lineWidth = 1;
+ctx.stroke();
+ctx.beginPath();
+ctx.moveTo(170,100);
+ctx.lineTo(195,105);
+ctx.lineWidth = 1;
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(95,125);
+ctx.lineTo(65,130);
+ctx.lineWidth = 1;
+ctx.stroke();
+ctx.beginPath();
+ctx.moveTo(112,125);
+ctx.lineTo(142,130);
+ctx.lineWidth = 1;
+ctx.stroke();
+
+
+
+function mijenjaj1(obj)
+{
+obj.style.backgroundColor="#808080"
+}
+
+function mijenjaj2(obj)
+{
+obj.style.backgroundColor=""
+}
+</script>
+
+</body>
+
+</html>

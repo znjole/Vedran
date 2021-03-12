@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Vedran Anzulović</title>
+
+	<link rel="stylesheet" type="text/css" href="Stranica.css" />
+
+</head>
+
+
+<body>
+
+	<nav>
+
+		<ul>
+			<li class="shadow">
+				<a href="Pocetna.html">Početna</a>
+			</li>
+			<li class="shadow">
+				<a class="shadow" href="Zivotopis.html">Životopis</a>
+			</li>
+			<li class="shadow">
+				<a href="Logika.html">Logika</a>
+			</li>
+		</ul>
+	</nav>
+
+	<div id="MainContainer">
+		<div class="left">
+			<nav class="izbornik">
+				<ul class="izbornik">
+					<li class="izbornik">
+						<a class="izbornik" href="Iskaznalogika.html">Iskazna logika</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Prirocnalogika.html">Priročna logika</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Istinitosnatablica.html">Istinitosna tablica</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Istinitosnostablo.html">Istinitosno stablo</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Dokaz.html">Dokaz</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="PKiDNO.html">PKiDNO</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Registarskistroj.html">Registarski stroj</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+		<div class="tekst">
+
+			<h2>
+				Istinitosna tablica
+			</h2>
+
+			<p>
+				U ovom dijelu stranice bavit ćemo se izgradnjom istinitosne tablice, tj. semantikom 
+				Li jezika. Kada smo govorili o sintaksi Li jezika, prevodili smo iskaze s hrvatskog
+				na Li jezik. Sada, kada govorimo o semantici Li jezika, nije važno što koje slovo
+				predstavlja u hrvatskom jeziku, već je važno koju ćemo vrijednost pridati svakom
+				iskaznom slovu. 
+			</p>
+
+			<p>
+				Vrijednosti koje možemo pridavati iskaznim slovima jesu i za istinu ili n za neistinu.
+				vidjet ćemo kako se gradi istinitosna tablica u Li jeziku, kako bi smo onda mogli 
+				provjeravati formalnu istinitost čitavih iskaza.
+			</p>
+
+			<p>
+				Za početak, moramo vidjeti kako se gradi istinitosna tablica. Pri izgradnji istinitosne
+				tablice prvo moramo utvrditi koliko različitih iskaznih slova imamo u nekom iskazu. To
+				je vrlo važno, jer nam o tome ovisi koliko ćemo redaka i stupaca tablice imati. Primjerice
+				za iskaz u kojem se koristi samo jedno iskazno slovo, naša istinitosna tablica će imati
+				1 stupac i 2<sup>1</sup> redaka. Zašto je to tako? To je tako zbog toga jer imamo jedan
+				iskaz, kojemu možemo pridodati samo dvije istinitosne vrijednosti; i ili n. Pa da vidimo
+				to na primjeru:
+			</p>
+
+			
+				<table>
+
+					<tr>
+						<td><i>P</i></td>
+					</tr>
+					<tr>
+						<td>i</td>
+					</tr>
+					<tr>
+						<td>n</td>
+					</tr>
+
+				</table>
+			
+
+			<p>
+				U slučaju kada imamo dva iskaza, tablica se povećava i to tako da imamo dva stupca (zbog
+				dva iskazna slova) i 2<sup>2</sup>, tj. 4 retka, jer tako iscrpljujemo sve moguće 
+				kombinacije istinitosnih vrijednosti. Pa da vidimo kako bi to izgledalo:
+			</p>
+
+			
+
+				<table>
+					<tr>
+						<td><i>P</i></td>
+						<td><i>Q</i></td>
+					</tr>	
+					<tr>
+						<td>i</td>
+						<td>i</td>
+					</tr>
+					<tr>
+						<td>i</td>
+						<td>n</td>
+					</tr>
+					<tr>
+						<td>n</td>
+						<td>i</td>
+					</tr>
+					<tr>
+						<td>n</td>
+						<td>n</td>
+					</tr>
+				</table>
+
+		
+
+			<p>
+				U slučaju kada imamo tri iskaza, tablica se opet povećava i to na takav način da imamo 
+				tri stupca (zbog tri iskaznih slova) i 2<sup>3</sup>, tj. 8 redaka, jer tako opet 
+				iscrpljujemo sve moguće kombinacije istinitosnih vrijednosti. Pa da vidimo kako bi to 
+				sada izgledalo:
+			</p>
+
+		
+				<table>
+
+					<tr>
+						<td><i>P</i></td>
+						<td><i>Q</i></td>
+						<td><i>R</i></td>
+					</tr>
+					<tr>
+						<td>i</td>
+						<td>i</td>
+						<td>i</td>
+					</tr>
+					<tr>
+						<td>i</td>
+						<td>i</td>
+						<td>n</td>
+					</tr>
+					<tr>
+						<td>i</td>
+						<td>n</td>
+						<td>i</td>
+					</tr>
+					<tr>
+						<td>i</td>
+						<td>n</td>
+						<td>n</td>
+					</tr>
+					<tr>
+						<td>n</td>
+						<td>i</td>
+						<td>i</td>
+					</tr>
+					<tr>
+						<td>n</td>
+						<td>i</td>
+						<td>n</td>
+					</tr>
+					<tr>
+						<td>n</td>
+						<td>n</td>
+						<td>i</td>
+					</tr>
+					<tr>
+						<td>n</td>
+						<td>n</td>
+						<td>n</td>
+					</tr>
+				</table>
+
+				<br>
+				i tako dalje za 2<sup>n</sup> količinu iskaznih slova. Važno je primjetiti kako se ispod 
+				desnog iskaznog slova istinitosne vrijednosti uvijek moraju redati naizmjence po jedno;
+				i, n, i, n, i, n, i, n, itd. do dna tablice. Ispod iskaznog slova koje se nalazi drugo 
+				s desna istinitosne vrijednosti se uvijek moraju redati naizmjence po dva; i, i, n, n, i,
+				i, n, n itd. do dna tablice. Nadalje ispod iskaznog slova koje se nalazi treće s desna, 
+				istinitosne vrijednosti se uvijek moraju redati naizmjence po četiri: i, i, i, i, n, n, 
+				n, n, itd. do dna tablice. Moramo primjetiti kako se istinitosne vrijednosti za svako 
+				iduće desno slovo redaju tako da ih u skupinama uvijek ima po duplo više nego ispod 
+				iskaznog slova koje se nalazi tom iskaznom slovu s lijeve strane.
+			
+
+			<p style="text-align:right">
+				<a class="lista" href="Istinitosnatablica.html">1</a>
+				<a class="lista" href="Istinitosnatablica1.html">2</a>
+				<a class="lista" href="Istinitosnatablica2.html">3</a>
+				<a class="lista" href="PKiDNO.html">→</a>
+			</p>
+		</div>
+	</div>
+
+</body>
+
+
+</html>

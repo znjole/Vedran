@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Vedran Anzulović</title>
+
+	<link rel="stylesheet" type="text/css" href="Stranica.css" />
+
+</head>
+
+<body>
+
+	<nav>
+
+		<ul>
+			<li class="shadow">
+				<a href="Pocetna.html">Početna</a>
+			</li>
+			<li class="shadow">
+				<a class="shadow" href="Zivotopis.html">Životopis</a>
+			</li>
+			<li class="shadow">
+				<a href="Logika.html">Logika</a>
+			</li>
+			</li>
+		</ul>
+	</nav>
+
+	<div id="MainContainer">
+		<div class="left">
+			<nav class="izbornik">
+				<ul class="izbornik">
+					<li class="izbornik">
+						<a class="izbornik" href="Iskaznalogika.html">Iskazna logika</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Prirocnalogika.html">Priročna logika</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Istinitosnatablica.html">Istinitosna tablica</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Istinitosnostablo.html">Istinitosno stablo</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Dokaz.html">Dokaz</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="PKiDNO.html">PKiDNO</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Registarskistroj.html">Registarski stroj</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	
+		<div class="tekst">
+
+			<h4>
+				Pogodba
+			</h4>
+
+			
+				Istinitosna tablica za pogodbu izgleda ovako:
+
+				<table>
+					<tr>
+						<td><i>P</i></td><td><i>Q</i></td><td class="Vrijednosti"><i>P</i>→<i>Q</i></td>
+					</tr>
+					<tr>
+						<td>i</td><td>i</td><td class="vrijednosti">i &nbsp;i &nbsp;i</td>
+					</tr>
+					<tr>
+						<td>i</td><td>n</td><td class="vrijednosti">i n n</td>
+					</tr>
+					<tr>
+						<td>n</td><td>i</td><td class="vrijednosti">n i &nbsp;i</td>
+					</tr>
+					<tr>
+						<td>n</td><td>n</td><td class="vrijednosti">n i &nbsp;n</td>
+					</tr>
+				</table>
+
+				<br>
+				Dakle, pogodba je istinita u svim slučajevima, osim kada je prednjak istinit a posljedak
+				neistinit. Kada kiša pada, logično je da ulice moraju biti mokre. To znači da ako 
+				kiša pada, onda se ne može dogoditi da se ulice ne smoče, kako ispada u drugom slučaju.
+				I zato je u slučaju da je prednjak istinit a posljedak neistinit, cijela pogodba 
+				neistinita. No postavlja se pitanje zašto je pogodba istinita i u slučaju kada je prednjak
+				neistinit, a posljedak istinit, kao u slučaju kada su ulice mokre, ali nije padala kiša.
+				To je tako iz jednostavnog razloga, jer je moguće da su se ulice smočile na neki drugi
+				način, koji nije bio uzrokovan kišom. Kao recimo kamionom koji čisti ulice, ili topljenjem
+				snijega, ili nekim drugim uzrokom. Na kraju, kada su oba slučaja neistinita, tj. kada kiša 
+				nije padala i ulice nisu mokre, onda vidimo kako je i u tom slučaju naš pogodbeni iskaz
+				istinit. 
+			
+
+			<h4>
+				Dvopogodba
+			</h4>
+
+			
+				Kao zadnji u nizu složenih iskaza u Li jeziku dolazi nam dvopogodba. Tablicu za dvopogodbu
+				slažemo na sljedeći način:
+
+				<table>
+					<tr>
+						<td><i>P</i></td><td><i>Q</i></td><td class="Vrijednosti"><i>P</i>↔<i>Q</i></td>
+					</tr>
+					<tr>
+						<td>i</td><td>i</td><td class="vrijednosti">i &nbsp;i &nbsp;i</td>
+					</tr>
+					<tr>
+						<td>i</td><td>n</td><td class="vrijednosti">i&nbsp; n n</td>
+					</tr>
+					<tr>
+						<td>n</td><td>i</td><td class="vrijednosti">n n i</td>
+					</tr>
+					<tr>
+						<td>n</td><td>n</td><td class="vrijednosti">n i&nbsp; n</td>
+					</tr>
+				</table>
+
+				<br>
+				Što je slučaj kod dvopogodbe? Pa, dvopogodba može biti istinita samo u slučajevima kada
+				oba njezina podiskaza imaju jednaku istinitosnu vrijednost. Ako svome djetetu kažem 
+				sljedeću stvar: "Ako i samo ako napišeš zadaću, moći ćeš se ići igrati na dvorište", 
+				može se dogoditi nekoliko stvari. Ako on napiše zadaću i ja ga pustim na dvorište, tada
+				on zna da sam mu govorio istinu. Ako je on s druge strane napisao zadaću, a ja ga nisam
+				pustio van, tada ispada da sam lagao. Isto vrijedi i u slučaju da sam ga pustio na 
+				dvorište, čak i u slučaju da nije napisao zadaću. Niti u jednom od ta dva slučaja ne bih
+				bio dosljedan sebi i govorio istinu. No, na kraju krajeva, ako on ne bi napisao zadaću,
+				niti bi ja njega pustio van, tada bi opet govorio istinu. I zato je uvjet za istinitost
+				dvopogodbe takav da je ona istinita samo kada oba njezina podiskaza imaju jednaku 
+				istinitosnu vrijednost.
+			
+
+			<h2>
+				Kako gradimo istinitosnu tablicu kod još složenijih iskaza?
+			</h2>
+
+			
+				Jednostavno; kombinacijom svih ovih pravila, počevši prvo pridavanjem istinitosnih 
+				vrijednosti najjednostavnijim podiskazima te se prebacujući na kompliciranije, sve
+				dok na kraju ne dođemo do glavnog poveznika. Pa, idemo vidjeti kako bi to izgledalo
+				na jednom primjeru iskaza: "(I∨M)∧(K→(¬I∧¬M))"
+
+				<table>
+					<tr>
+						<td>I</td>
+						<td>K</td>
+						<td>M</td>
+						<td class="Vrijednosti"><b style="color:#0000FF">(</b><b style="color:#8B008B">I</b><b style="color:#0000FF">∨</b><b style="color:#8B008B">M</b><b style="color:#0000FF">)</b>∧<b style="color:#7CFC00">(</b><b style="color:#8B008B">K</b><b style="color:#7CFC00">→</b><b style="color:#FF0000">(</b><b style="color:#0000FF">¬</b><b style="color:#8B008B">I</b><b style="color:#FF0000">∧</b><b style="color:#0000FF">¬</b><b style="color:#8B008B">M</b><b style="color:#FF0000">)</b><b style="color:#7CFC00">)</b></td>
+					</tr>
+					<tr>
+						<td>i</td>
+						<td>i</td>
+						<td>i</td>
+						<td class="Vrijednosti"><b style="color:#8B008B">i</b>&nbsp; <b style="color:#0000FF">i</b>&nbsp; <b style="color:#8B008B">i</b> &nbsp; n&nbsp; <b style="color:#8B008B">i</b>&nbsp; <b style="color:#7CFC00">n</b>&nbsp; <b style="color:#0000FF">n</b><b style="color:#8B008B">i</b>&nbsp;<b style="color:#FF0000">n</b> <b style="color:#0000FF">n</b> <b style="color:#8B008B">i</b> &nbsp;&nbsp;</td>
+					</tr>
+					<tr>
+						<td>i</td>
+						<td>i</td>
+						<td>n</td>
+						<td class="Vrijednosti"><b style="color:#8B008B">i</b>&nbsp; <b style="color:#0000FF">i</b>&nbsp; <b style="color:#8B008B">n</b> &nbsp;n&nbsp; <b style="color:#8B008B">i</b>&nbsp; <b style="color:#7CFC00">n</b>&nbsp; <b style="color:#0000FF">n</b><b style="color:#8B008B">i</b>&nbsp;<b style="color:#FF0000">n</b> &nbsp;<b style="color:#0000FF">i</b> <b style="color:#8B008B">n</b>&nbsp;&nbsp;  </td>
+					</tr>
+					<tr>
+						<td>i</td>
+						<td>n</td>
+						<td>i</td>
+						<td class="Vrijednosti"><b style="color:#8B008B">i</b>&nbsp; <b style="color:#0000FF">i</b>&nbsp; <b style="color:#8B008B">i</b> &nbsp; i&nbsp; <b style="color:#8B008B">n</b>&nbsp; <b style="color:#7CFC00">i</b>&nbsp; &nbsp;<b style="color:#0000FF">n</b><b style="color:#8B008B">i</b>&nbsp;<b style="color:#FF0000">n</b> <b style="color:#0000FF">n</b> <b style="color:#8B008B">i</b>&nbsp;&nbsp;   </td>
+					</tr>
+					<tr>
+						<td>i</td>
+						<td>n</td>	
+						<td>n</td>
+						<td class="Vrijednosti"><b style="color:#8B008B">i</b>&nbsp; <b style="color:#0000FF">i</b>&nbsp; <b style="color:#8B008B">n</b>&nbsp; i&nbsp; <b style="color:#8B008B">n</b>&nbsp; <b style="color:#7CFC00">i</b> &nbsp; <b style="color:#0000FF">n</b><b style="color:#8B008B">i</b> <b style="color:#FF0000">n</b> <b style="color:#0000FF">i</b>&nbsp;<b style="color:#8B008B">n</b>&nbsp;&nbsp;  </td>
+					</tr>
+					<tr>
+						<td>n</td>
+						<td>i</td>
+						<td>i</td>
+						<td class="Vrijednosti"><b style="color:#8B008B">n</b>&nbsp; <b style="color:#0000FF">i</b>&nbsp; <b style="color:#8B008B">i</b>&nbsp; n&nbsp; <b style="color:#8B008B">i</b> &nbsp;<b style="color:#7CFC00">n</b>&nbsp; <b style="color:#0000FF">i</b><b style="color:#8B008B">n</b> <b style="color:#FF0000">n</b> <b style="color:#0000FF">n</b> <b style="color:#8B008B">i</b>&nbsp; &nbsp;   </td>
+					</tr>
+					<tr>
+						<td>n</td>
+						<td>i</td>
+						<td>n</td>
+						<td class="Vrijednosti"><b style="color:#8B008B">n</b>&nbsp;<b style="color:#0000FF">n</b>&nbsp;<b style="color:#8B008B">n</b>&nbsp; n &nbsp;<b style="color:#8B008B">i</b> &nbsp; <b style="color:#7CFC00">i</b>&nbsp; <b style="color:#0000FF">i</b><b style="color:#8B008B">n</b>&nbsp;<b style="color:#FF0000">i</b> &nbsp;<b style="color:#0000FF">i</b>&nbsp;<b style="color:#8B008B">n</b>&nbsp; &nbsp;</td>
+					</tr>
+					<tr>
+						<td>n</td>
+						<td>n</td>
+						<td>i</td>
+						<td class="Vrijednosti"><b style="color:#8B008B">n</b>&nbsp;<b style="color:#0000FF">i</b> &nbsp;<b style="color:#8B008B">i</b> &nbsp; i &nbsp; <b style="color:#8B008B">n</b>&nbsp; <b style="color:#7CFC00">i</b>&nbsp; <b style="color:#0000FF">i</b><b style="color:#8B008B">n</b>&nbsp;<b style="color:#FF0000">n</b>&nbsp;<b style="color:#0000FF">n</b> <b style="color:#8B008B">i</b>&nbsp; &nbsp; </td>
+					</tr>
+					<tr>
+						<td>n</td>
+						<td>n</td>
+						<td>n</td>
+						<td class="Vrijednosti"><b style="color:#8B008B">n</b>&nbsp;<b style="color:#0000FF">n</b>&nbsp;<b style="color:#8B008B">n</b>&nbsp; n&nbsp; <b style="color:#8B008B">n</b> &nbsp;<b style="color:#7CFC00">i</b> &nbsp;<b style="color:#0000FF">i</b><b style="color:#8B008B">n</b>&nbsp;<b style="color:#FF0000">i</b> &nbsp;<b style="color:#0000FF">i</b>&nbsp;<b style="color:#8B008B">n</b>&nbsp; &nbsp;   </td>
+					</tr>
+				</table>
+
+				<br>
+				Prvo što smo napravili je to da smo ispod iskaznih slova označenih <b style="color:#8B008B">bojom</b>
+				prepisali istinitosne vrijednosti koje se nalaze na lijevoj strani tablice. Nakon što smo
+				to obavili, gledamo koji su nam sljedeći podiskazi koje možemo rješavati. To su dakako
+				"(I∨M)", "¬I" i "¬M", označeni <b style="color:#0000FF">bojom</b>. Slučaj "(I∨M)" smo 
+				rješavali po pravilima disjunkcije kombinirajući istinitosne vrijednosti konjunkata "I" 
+				i "M", dok smo iskaze "¬I" i "¬M" rješavali po pravilima negacije tako da smo samo 
+				promijenili istinitosnu vrijednost originalnih iskaza. Pošto ne možemo rješavati ništa 
+				drugo osim podiskaza "(¬I∧¬M)", on je sljedeći na kojeg ćemo se namjeriti. I to tako da
+				ćemo konjunkciju rješavati kombinacijom istinitosnih vrijednosti koje su u tom podiskazu
+				označene <b style="color:#0000FF">bojom</b>. Tada dobivamo istinitosne vrijednosti 
+				označene <b style="color:#FF0000">bojom</b>, te uz pomoć tih vrijednosti i vrijednosti
+				označenih <b style="color:#8B008B">bojom</b> ispod podiskaza <b style="color:#8B008B">K</b>
+				rješavamo pogodbu "(K→(¬I∧¬M))", kako bismo dobili istinitosne vrijednosti uz pomoć kojih
+				ćemo doći do krajnjeg rješenja ovog cijelog iskaza. Njih ćemo označiti <b style="color:#7CFC00">bojom</b>
+				i na kraju ćemo te vrijednosti pridružiti Istinitosnim vrijednostima koje smo dobili iz 
+				konjunkcije "(I∨M)", kako bismo dobili krajnje istinitosno tumačenje za sve moguće 
+				slučajeve cijelog tog iskaza. Njih nećemo označiti nikakvom posebnom bojom.
+			
+
+			<p style="text-align:right">
+				<a class="lista" href="Istinitosnatablica.html">1</a>
+				<a class="lista" href="Istinitosnatablica1.html">2</a>
+				<a class="lista" href="Istinitosnatablica2.html">3</a>
+				<a class="lista" href="PKiDNO.html">→</a>
+			</p>
+		</div>
+	</div>
+
+</body>
+
+
+</html>

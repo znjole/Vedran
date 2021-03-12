@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Vedran Anzulović</title>
+
+	<link rel="stylesheet" type="text/css" href="Stranica.css" />
+
+</head>
+
+<body>
+
+	<nav>
+
+		<ul>
+			<li class="shadow">
+				<a href="Pocetna.html">Početna</a>
+			</li>
+			<li class="shadow">
+				<a class="shadow" href="Zivotopis.html">Životopis</a>
+			</li>
+			<li class="shadow">
+				<a href="Logika.html">Logika</a>
+			</li>
+		</ul>
+	</nav>
+	
+	<div id="MainContainer">
+		<div class="left">
+			<nav class="izbornik">
+				<ul class="izbornik">
+					<li class="izbornik">
+						<a class="izbornik" href="Iskaznalogika.html">Iskazna logika</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Prirocnalogika.html">Priročna logika</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Istinitosnatablica.html">Istinitosna tablica</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Istinitosnostablo.html">Istinitosno stablo</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Dokaz.html">Dokaz</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="PKiDNO.html">PKiDNO</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Registarskistroj.html">Registarski stroj</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+		<div class="tekst">
+
+			<h2>
+				Istinitosno vrjednovanje iskaza
+			</h2>
+
+			<p>
+				U ovom dijelu vidjet ćemo kako se gradi istinitosna tablica za jednostavne i složene 
+				iskaze. 
+			</p>
+
+			<h3>
+				Jednostavni iskazi
+			</h3>
+
+			<p>
+				Kao što smo vidjeli na prethodnoj stranici, tablica za jednostavni iskaz izgleda ovako:
+
+				<table>
+
+					<tr>
+						<td><i>P</i></td>
+					</tr>
+					<tr>
+						<td>i</td>
+					</tr>
+					<tr>
+						<td>n</td>
+					</tr>
+
+				</table>
+
+				<br>
+				Kada u jednostavan iskaz poput ovoga gore uvedemo neke poveznike i druge iskaze, tada 
+				dobivamo složene iskaze. I tada naša tablica dobiva još jedan stupac, kao što ćemo 
+				vidjeti u sljedećem paragrafu.
+			</p>
+
+			<h3>
+				Složeni iskazi
+			</h3>
+
+			<p>
+				Prvi tip složenih iskaza je iskaz s negacijom:
+
+				<table>
+
+					<tr>
+						<td><i>P</i></td><td><i>¬ P</i></td>
+					</tr>
+					<tr>
+						<td>i</td><td>n i</td>
+					</tr>
+					<tr>
+						<td>n</td><td>i n</td>
+					</tr>
+				</table>
+
+				<br>
+				Što možemo vidjeti u tom primjeru? Možemo vidjeti upravo to da kada zaniječemo neki iskaz
+				<i>P</i>, da se njegova istinitosna vrijednost mijenja u suprotnu. Na negaciju možemo 
+				gledati kao na minus u matematici. Kada god ispred nekog broja stavimo minus, njegova se 
+				vrijednost mijenja; ako je bio pozitivan, onda postaje negativan a ako je bio negativan, 
+				onda postaje pozitivan.
+			</p>
+
+			<h4>
+				Konjunkcija
+			</h4>
+
+			<p>
+				Iskazi složeni konjunkcijom dobivaju istinitosna tumačenja u istinitosnoj tablici:
+
+				<table>
+
+					<tr>
+						<td><i>P</i></td><td><i>Q</i></td><td class="Vrijednosti"><i>P</i>∧<i>Q</i></td>
+					</tr>
+					<tr>
+						<td>i</td><td>i</td><td class="vrijednosti">i &nbsp;i &nbsp;i</td>
+					</tr>
+					<tr>	
+						<td>i</td><td>n</td><td class="vrijednosti">i &nbsp;n n</td>
+					</tr>
+					<tr>
+						<td>n</td><td>i</td><td class="vrijednosti">n n i</td>
+					</tr>
+					<tr>
+						<td>n</td><td>n</td><td class="vrijednosti">n n n</td>
+					</tr>
+
+				</table>
+
+				<br>
+				Ispod <i>P</i> i <i>Q</i> smo jednostavno prepisali istinitosne vrijednosti, a u sredinu,
+				ispod poveznika, u ovom slučaju konjunkta smo pisali istinitosne vrijednosti koje dobijemo 
+				kombinacijom istinitosnih vrijednosti <i>P</i> i <i>Q</i> u slučaju konjunkcije. Da 
+				pojasnim. Uzmimo za primjer onaj dobar stari iskaz "Zovem se Ivan i idem u skupi disko". 
+				Taj iskaz (a i na kraju krajeva, bilo koja druga konjunkcija) bit će istiniti samo u
+				slučaju kada su oba konjunkta istinita. Dakle, iskaz "Zovem se Ivan i idem u skupi disko"
+				biti će istinit samo u slučaju ukoliko se ja zovem Ivan i ukoliko idem u skupi disko. 
+				Dakle, oba uvjeta moraju biti zadovoljena da bismo konjunkciju mogli smatrati istinitom.
+				Pošto moje ime nije Ivan, ta bi izjava kada bi izišla iz mojih ustiju bila neistinita.
+			</p>
+
+			<h4>
+				Disjunkcija
+			</h4>
+
+			<p>
+				Iskazi složeni konjunkcijom dobivaju sljedeća istinitosna tumačenja u istinitosnoj 
+				tablici:
+
+				<table>
+
+					<tr>
+						<td><i>P</i></td><td><i>Q</i></td><td class="Vrijednosti"><i>P</i>∨<i>Q</i></td>
+					</tr>
+					<tr>
+						<td>i</td><td>i</td><td class="vrijednosti">i &nbsp;i &nbsp;i</td>
+					</tr>
+					<tr>
+						<td>i</td><td>n</td><td class="vrijednosti">i &nbsp;i &nbsp;n</td>
+					</tr>
+					<tr>
+						<td>n</td><td>i</td><td class="vrijednosti">n i &nbsp;i</td>
+					</tr>
+					<tr>
+						<td>n</td><td>n</td><td class="vrijednosti">n n n</td>
+					</tr>
+				</table>
+
+				<br>
+				Što primjećujemo ovdje? Pa, prvo što pada u oči je to da imamo samo jednu neistinu, 
+				odnosno tri istinita slučaja. Možemo reći kako je disjunkcija istinita u bilo kojem
+				slučaju u kojem je barem jedan od disjunkata istinit. Uzmimo za primjer iskaz: "Sjedim 
+				pred računalom ili pred televizorom". Taj će iskaz logično, biti istinit bilo u slučaju
+				da sjedim pred računalom, bilo u slučaju da sjedim pred televizorom. Primjetimo kako
+				na istom stolu mogu imati i računalo i televizor, pa bi to činilo oba disjunkta 
+				istinita, a time i čitavu disjunkciju.
+			</p>
+
+			<p style="text-align:right">
+				<a class="lista" href="Istinitosnatablica.html">1</a>
+				<a class="lista" href="Istinitosnatablica1.html">2</a>
+				<a class="lista" href="Istinitosnatablica2.html">3</a>
+				<a class="lista" href="PKiDNO.html">→</a>
+			</p>
+		</div>
+	</div>
+</body>
+
+</html>

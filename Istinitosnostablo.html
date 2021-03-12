@@ -1,0 +1,457 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Vedran Anzulović</title>
+
+	<link rel="stylesheet" type="text/css" href="Stranica.css" />
+
+</head>
+
+<body>
+
+	<nav>
+
+		<ul>
+			<li class="shadow">
+				<a href="Pocetna.html">Početna</a>
+			</li>
+			<li class="shadow">
+				<a class="shadow" href="Zivotopis.html">Životopis</a>
+			</li>
+			<li class="shadow">
+				<a href="Logika.html">Logika</a>
+			</li>
+		</ul>
+	</nav>
+
+	<div id="MainContainer">
+		<div class="left">
+			<nav class="izbornik">
+				<ul class="izbornik">
+					<li class="izbornik">
+						<a class="izbornik" href="Iskaznalogika.html">Iskazna logika</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Prirocnalogika.html">Priročna logika</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Istinitosnatablica.html">Istinitosna tablica</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Istinitosnostablo.html">Istinitosno stablo</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Dokaz.html">Dokaz</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="PKiDNO.html">PKiDNO</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Registarskistroj.html">Registarski stroj</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		
+		<div class="tekst">
+
+			<h2>
+				Istinitosno stablo
+			</h2>
+
+			<p>
+				Na ovom mjestu reći ćemo nešto o istinitosnom stablu. Čemu uopće služi istinitosno stablo? Ono
+				nam služi kao alat provjere valjanosti iskaza, kao i zaključaka iskazne i priročne logike te zadovoljivosti
+				raznih iskaza. Iako to sve možemo provjeriti i istinitosnom tablicom, ponekad nam to i nije baš 
+				praktično. To nam najčešće nije praktično u slučajevima kad imamo više od tri iskazna slova, jer 
+				se količina mogućih kombinacija istinitosnih vrijednosti eksponencijalno povećava, te bismo za 
+				iskaze u kojima imamo primjerice 10 različitih iskaznih slova morali izgraditi tablicu s 1024 redaka, 
+				jer je 2<sup>10</sup>=2*2*2*2*2*2*2*2*2*2=1024. Izgradnjom istinitosnog stabla za provjeru takvih 
+				iskaza uvelike si možemo olakšati život. Dakako, da bismo uopće mogli provjeravati valjanost i zadovoljivost
+				iskaza te valjanost zaključaka, moramo znati koja sve pravila za izgradnju istinitosnog stabla postoje,
+				kako ih i kada koristiti te na kraju krajeva, kako uopće izgleda istinitosno stablo.
+			</p>
+
+			<p>
+				1. Počnimo od zadnje stavke, jer je ona najkraća. Istinitosno stablo izgleda kao bilo koje stablo bez
+				listova, koje možemo zamisliti kao izvađeno iz zemlje i okrenuto naopako. To znači kako naše 
+				istinitosno stablo svoje deblo ima na vrhu stranice, a njegove grane idu prema dnu stranice.
+			</p>
+
+			<p>
+				2. Pravila za izgradnju istinitosnog stabla temelje se na pravilima izgradnje istinitosne tablice.
+				Tako prvo pravilo koje ćemo upoznati jest pravilo rješavanja konjunkcije. Ono nam kaže da je konjunkcija
+				istinita samo u jednom slučaju i to je onaj u kojem su oba konjunkta istinita. Sjetimo se:
+				<table>
+					<tr>
+						<td><i>P</i></td>
+						<td><i>Q</i></td>
+						<td class="Vrijednosti"><i>P</i>∧<i>Q</i></td>
+					</tr>
+					<tr>
+						<td>i</td>
+						<td>i</td>
+						<td class="vrijednosti">i &nbsp;i &nbsp;i</td>
+					</tr>
+					<tr>
+						<td>i</td>
+						<td>n</td>
+						<td class="vrijednosti">i &nbsp;n n</td>
+					</tr>
+					<tr>
+						<td>n</td>
+						<td>i</td>
+						<td class="vrijednosti">n n i</td>
+					</tr>
+					<tr>
+						<td>n</td>
+						<td>n</td>
+						<td class="vrijednosti">n n n</td>
+					</tr>
+				</table>
+			</p>
+
+			<h3>
+				Konjunkcija i njezin nijek
+			</h3>
+
+			<p>
+				Pravila za istinitosno stablo nisu teška za popamtiti, iako ih ima devet za iskaznu logiku. Ako imamo 
+				samo jedan slučaj istinitosti iskaza, onda nam se stablo neće granati, već će ostati u jednom stupcu. 
+				Kako je konjunkcija istinita samo u jednom jedinom slučaju, onda nam se stablo neće granati. No, osim 
+				što nam se ono neće granati, morat ćemo napisati i konkretne slučajeve u kojima je ona istinita, a to 
+				ćemo napraviti tako da ćemo jednostavno napisati P i Q jedno ispod drugog i to na ovakav način:
+			</p>
+
+			<div class="canvas-container">
+				<canvas id="konjunkcija" onmouseover="mijenjaj1(this)" onmouseout="mijenjaj2(this)">
+
+				</canvas>
+			</div>
+
+			<p>
+				Možemo vidjeti kako smo jednostavno prepisali vrijednosti koje imaju P i Q, a one su u ovom slučaju
+				istina, te kako smo potpisali P i Q jedan ispod drugog, bez grananja. Također, s desne strane možemo 
+				vidjeti i opravdanje kako smo došli do P i Q, odnosno da smo ih dobili iz konjunkcije koja se nalazi 
+				u prvom retku. Kraj iskaza u prvom retku stavljamo kvačicu, kako bismo ukazali na to da smo taj redak 
+				rješili, odnosno iskaz iz tog retka sastavli na njegove glavne podiskaze te da ga više ne moramo dirati.
+			</p>
+
+			<p>
+				Dakako, za svako pravilo postoji i neko pravilo, koje se odnosi na nijek tog istog iskaza. Tako 
+				kad zaniječemo konjunkciju, dobit ćemo sljedeći slučaj, u kojem je ona isinita u čak tri slučaja. 
+				Pogledajmo:
+			</p>
+				<table>
+					<tr>
+						<td><i>P</i></td>
+						<td><i>Q</i></td>
+						<td class="Vrijednosti"><b style="color:#FF2200">¬</b>(<i>P</i>∧<i>Q</i>)</td>
+					</tr>
+					<tr>
+						<td>i</td>
+						<td>i</td>
+						<td class="vrijednosti"><b style="color:#FF2200">n</b>&nbsp;i &nbsp;i &nbsp;i&nbsp;</td>
+					</tr>
+					<tr>
+						<td>i</td>
+						<td>n</td>
+						<td class="vrijednosti"><b style="color:#FF2200">&nbsp;i</b> &nbsp;i&nbsp;n n&nbsp;</td>
+					</tr>
+					<tr>
+						<td>n</td>
+						<td>i</td>
+						<td class="vrijednosti"><b style="color:#FF2200"> &nbsp; i</b>&nbsp; n n &nbsp;i &nbsp;</td>
+						</tr>
+					<tr>
+						<td>n</td>
+						<td>n</td>
+						<td class="vrijednosti"><b style="color:#FF2200">i</b> &nbsp;n n n&nbsp;</td>
+					</tr>
+				</table>
+
+				Vidimo kako je nijek konjunkcije istinit u onim slučajevima u kojima je konjunkcija neistinita,
+				a neistinit u onom u kojem je konjunkcija istinita. Dakle, nijek konjunkcije je istinit u bilo
+				kojem slučaju u kojem je barem jedan od konjunkata neistinit. Kako ćemo to pravilo izraziti u
+				stablu? Pogledajmo:
+
+			<div class="canvas-container">
+				<canvas id="nijekkonjunkcije" onmouseover="mijenjaj1(this)" onmouseout="mijenjaj2(this)">
+
+				</canvas>
+			</div>
+
+			<p>
+				Ovdje dakle imamo grananje i nijekanje svakog od neposrednih podiskaza. Također, kvačicom obilježavamo
+				riješeni nijek, a sa strane pišemo opravdanje kojim smo dobili drugi redak, odnosno 1¬∧.
+			</p>
+
+			<h3>
+				Disjunkcija i njezin nijek
+			</h3>
+
+			<p>
+				Sljedeća pravila odnose se na disjunkciju i njezin nijek. S obzirom na to kako je dijunkcija 
+				također istinita u čak tri slučaja, stablo će nam se u disjunkciji granati. Disjunkcija je sjetimo 
+				se, istinita ukoliko je barem jedan, ako ne i oba disjunkta istinita. To ćemo stoga zapisati na 
+				sljedeći način:
+			</p>
+
+			<div class="canvas-container">
+				<canvas id="disjunkcija" onmouseover="mijenjaj1(this)" onmouseout="mijenjaj2(this)">
+
+				</canvas>
+			</div>
+
+			<p>
+				Također, kao i u slučaju konjunkcije prepisujemo iskazna slova, ali za razliku od nje, granamo stablo.
+				S desne strane pišemo opravdanje od kojeg smo dobili taj redak stabla, odnosno u ovom primjeru iz prvog 
+				retka rješavanjem disjunkcije.
+			</p>
+
+			<p>
+				Što se tiče nijeka disjunkcije, znamo da ako je disjunkcija istinita u tri slučaja, onda njezin nijek 
+				mora biti istinit u samo jednom slučaju. To nam naznačuje kako se stablo, kad dođe do nijeka disjunkcije
+				neće granati, već će se potpisivati, i to na takav način da ćemo prepisati istinitosne vrijednosti oba 
+				disjunkta koja čine nijek disjunkcije istinitim, a to su ¬P i ¬Q. Pogledajmo prvo tablicu pa pravilo:
+			</p>
+
+			<p>
+				<table>
+					<tr>
+						<td><i>P</i></td>
+						<td><i>Q</i></td>
+						<td class="Vrijednosti"><b style="color:#FF2200">¬</b>(<i>P</i>v<i>Q</i>)</td>
+					</tr>
+					<tr>
+						<td>i</td>
+						<td>i</td>
+						<td class="vrijednosti"><b style="color:#FF2200">n&nbsp;</b>&nbsp;i&nbsp;i &nbsp;i&nbsp;</td>
+					</tr>
+					<tr>
+						<td>i</td>
+						<td>n</td>
+						<td class="vrijednosti"><b style="color:#FF2200">n&nbsp;</b>&nbsp;i i &nbsp;n</td>
+					</tr>
+					<tr>
+						<td>n</td>
+						<td>i</td>
+						<td class="vrijednosti"><b style="color:#FF2200">n</b>&nbsp;n i&nbsp; i&nbsp;</td>
+					</tr>
+					<tr>
+						<td>n</td>
+						<td>n</td>
+						<td class="vrijednosti"><b style="color:#FF2200">i</b> &nbsp;n n n</td>
+					</tr>
+				</table>
+			</p>
+
+			<div class="canvas-container">
+				<canvas id="nijekdisjunkcije" onmouseover="mijenjaj1(this)" onmouseout="mijenjaj2(this)">
+
+				</canvas>
+			</div>
+
+			<p>
+				Kao i u svim slučajevima do sada, kraj iskaza u prvom retku stoji kvačica, dok u drugom i trećem pišemo 
+				opravdanje zbog kojeg smo dobili zanijekane podiskaze.
+			</p>
+
+			<p style="text-align:right">
+				<a class="lista" href="Istinitosnostablo.html">1</a>
+				<a class="lista" href="Istinitosnostablo1.html">2</a>
+				<a class="lista" href="Istinitosnostablo2.html">3</a>
+				<a class="lista" href="Istinitosnostablo3.html">4</a>
+			</p>
+		
+	</div>
+
+<script>
+
+var c=document.getElementById("konjunkcija");
+var ctx=c.getContext("2d");
+
+ctx.font = 'normal 26pt Calibri';
+ctx.fillStyle = 'black';
+ctx.fillText("1",80,40);
+ctx.fillText("2",80,90);
+ctx.fillText("3",80,140);
+ctx.fillText("P",120,40);
+ctx.fillText("∧",145,40);
+ctx.fillText("Q",180,40);
+ctx.fillText("P",150,90);
+ctx.fillText("Q",150,140);
+ctx.fillText("1",230,90);
+ctx.fillText("1",230,140);
+ctx.fillText("∧",250,90);
+ctx.fillText("∧",250,140);
+ctx.stroke();
+// kvačica//
+ctx.beginPath();
+ctx.moveTo(220,40);
+ctx.lineTo(210,25);
+ctx.moveTo(220,40);
+ctx.lineTo(240,10);
+ctx.lineWidth = 3;
+ctx.stroke();
+
+function mijenjaj1(obj)
+{
+obj.style.backgroundColor="#808080"
+}
+
+function mijenjaj2(obj)
+{
+obj.style.backgroundColor=""
+}
+</script>
+
+<script>
+
+var c=document.getElementById("nijekkonjunkcije");
+var ctx=c.getContext("2d");
+
+ctx.font = 'normal 26pt Calibri';
+ctx.fillStyle = 'black';
+ctx.fillText("1",60,40);
+ctx.fillText("2",60,90);
+ctx.fillText("¬",80,40);
+ctx.fillText("(",100,40);
+ctx.fillText("P",120,40);
+ctx.fillText("∧",145,40);
+ctx.fillText("Q",180,40);
+ctx.fillText(")",210,40);
+ctx.fillText("¬P",80,90);
+ctx.fillText("¬Q",180,90);
+ctx.fillText("1",230,90);
+ctx.fillText("¬∧",250,90);
+
+//grane//
+ctx.beginPath();
+ctx.moveTo(145,40);
+ctx.lineTo(110,60);
+ctx.lineWidth = 3;
+ctx.stroke();
+ctx.beginPath();
+ctx.moveTo(170,40);
+ctx.lineTo(210,60);
+ctx.lineWidth = 3;
+ctx.stroke();
+
+// kvačica//
+ctx.beginPath();
+ctx.moveTo(240,40);
+ctx.lineTo(230,25);
+ctx.moveTo(240,40);
+ctx.lineTo(260,10);
+ctx.lineWidth = 3;
+ctx.stroke();
+
+function mijenjaj1(obj)
+{
+obj.style.backgroundColor="#808080"
+}
+
+function mijenjaj2(obj)
+{
+obj.style.backgroundColor=""
+}
+</script>
+
+<script>
+
+var c=document.getElementById("disjunkcija");
+var ctx=c.getContext("2d");
+
+ctx.font = 'normal 26pt Calibri';
+ctx.fillStyle = 'black';
+ctx.fillText("1",60,40);
+ctx.fillText("2",60,90);
+ctx.fillText("P",120,40);
+ctx.fillText("∨",145,40);
+ctx.fillText("Q",180,40);
+ctx.fillText("P",100,90);
+ctx.fillText("Q",200,90);
+ctx.fillText("1",230,90);
+ctx.fillText("∨",250,90);
+
+//grane//
+ctx.beginPath();
+ctx.moveTo(145,40);
+ctx.lineTo(110,60);
+ctx.lineWidth = 3;
+ctx.stroke();
+ctx.beginPath();
+ctx.moveTo(170,40);
+ctx.lineTo(210,60);
+ctx.lineWidth = 3;
+ctx.stroke();
+
+// kvačica//
+ctx.beginPath();
+ctx.moveTo(220,40);
+ctx.lineTo(210,25);
+ctx.moveTo(220,40);
+ctx.lineTo(240,10);
+ctx.lineWidth = 3;
+ctx.stroke();
+
+function mijenjaj1(obj)
+{
+obj.style.backgroundColor="#808080"
+}
+
+function mijenjaj2(obj)
+{
+obj.style.backgroundColor=""
+}
+</script>
+
+<script>
+
+var c=document.getElementById("nijekdisjunkcije");
+var ctx=c.getContext("2d");
+
+ctx.font = 'normal 26pt Calibri';
+ctx.fillStyle = 'black';
+ctx.fillText("1",60,40);
+ctx.fillText("2",60,90);
+ctx.fillText("3",60,140);
+ctx.fillText("¬",80,40);
+ctx.fillText("(",100,40);
+ctx.fillText("P",120,40);
+ctx.fillText("v",150,40);
+ctx.fillText("Q",180,40);
+ctx.fillText(")",210,40);
+ctx.fillText("¬P",135,90);
+ctx.fillText("¬Q",135,140);
+ctx.fillText("1",230,90);
+ctx.fillText("1",230,140);
+ctx.fillText("¬v",250,90);
+ctx.fillText("¬v",250,140);
+ctx.stroke();
+// kvačica//
+ctx.beginPath();
+ctx.moveTo(240,40);
+ctx.lineTo(230,25);
+ctx.moveTo(240,40);
+ctx.lineTo(260,10);
+ctx.lineWidth = 3;
+ctx.stroke();
+
+function mijenjaj1(obj)
+{
+obj.style.backgroundColor="#808080"
+}
+
+function mijenjaj2(obj)
+{
+obj.style.backgroundColor=""
+}
+</script>
+
+
+</body>
+
+</html>
