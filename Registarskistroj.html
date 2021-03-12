@@ -1,0 +1,312 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Logika - Registarski stroj</title>
+
+	<link rel="stylesheet" type="text/css" href="Stranica.css" />
+
+</head>
+
+<body>
+
+	<nav>
+
+		<ul>
+			<li class="shadow">
+				<a href="Pocetna.html">Početna</a>
+			</li>
+			<li class="shadow">
+				<a class="shadow" href="Zivotopis.html">Životopis</a>
+			</li>
+			<li class="shadow">
+				<a href="Logika.html">Logika</a>
+			</li>
+		</ul>
+	</nav>
+
+	<div id="MainContainer">
+		<div class="left">
+			<nav class="izbornik">
+				<ul class="izbornik">
+					<li class="izbornik">
+						<a class="izbornik" href="Iskaznalogika.html">Iskazna logika</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Prirocnalogika.html">Priročna logika</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Istinitosnatablica.html">Istinitosna tablica</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Istinitosnostablo.html">Istinitosno stablo</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Dokaz.html">Dokaz</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="PKiDNO.html">PKiDNO</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Registarskistroj.html">Registarski stroj</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+		<div class="tekst">
+
+			<h2>
+				Registarski stroj
+			</h2>
+
+			<p>
+				Što je to uopće i čemu služi registarski stroj? Registarski stroj je takav stroj koji
+				uz pomoć registara i pripadajućih mu brojača obavlja računske operacije. Počevši od
+				najjednostavnijih kao što su zbrajanje i oduzimanje, preko množenja i dijeljenja, pa 
+				do svake postojeće matematičke radnje. Mi ćemo se radi opširnosti ovog gradiva zadržati
+				samo na zbrajanju o oduzimanju. Pa krenimo redom.
+			</p>
+
+			<h3>
+				Zbrajanje
+			</h3>
+
+			<p>
+				Prvo što ćemo napraviti je nacrtati shemu jednog registarskog stroja. Stroju za zbrajanje
+				potrebna su svega dva registra; registar broj 1 i registar broj 2, označeni tim brojevima
+				u nacrtanim krugovima na slici.
+			</p>
+
+				<canvas id="regstroj" onmouseover="mijenjaj1(this)" onmouseout="mijenjaj2(this)">
+					Your browser does not support canvas
+				</canvas>
+
+			<p>
+				Osim krugova koji predstavljaju registre, vidimo da nam se na slici nalazi još nešto. To
+				su 4 strjelice, označene brojevima od 0 do 3. One predstavljaju tok radnji koje se 
+				odvijaju u njemu kada želimo zbrojiti neka dva broja. Strjelica označena brojem 0 označava
+				od kuda se radnja počinje odvijati, a strjelica označena slovom p označava tok radnje
+				kad se u ovom slučaju registar broj 2, isprazni. I posljednja stvar na koju moramo 
+				obratiti pozornost jesu + i - unutar oba registarska stroja. Oni označavaju radnju koja
+				se odvija unutar tog registra. U slučaju kada imamo -, tada je radnja koja se odvija u 
+				registru naravno, oduzimanje brojača iz tog registra, a kada imamo +, onda je radnja
+				dodavanje brojača u taj registar.
+			</p>
+
+			<p>
+				Uzmimo za primjer radnju zbrajanja 2 i 2. Kada želimo dati na znanje da se nešto zbraja,
+				to ćemo označiti na sljedeći način: +(x, y). U ovom konkretnom slučaju to ćemo zapisati 
+				kao +(2, 2). To također znači kako smo u registar broj 1 i registar broj 2 stavili po dva
+				brojača. Kako zbrajanje 2 i 2 izgleda kada uđemo u registarski stroj? Prvo što se 
+				događa jest to da strjelica označena brojem 0 označava to da smo stroju dali naredbu da 
+				počne s radom. Kada počne s radom, prvo što provjerava jest stanje brojača u registru 
+				broj 2. Količina tih brojača označava količinu puta koliko će puta uči u taj registar i
+				otići u registar broj 1 obavljati tamo zadanu radnju koja je u ovom slučaju zbrajanje.
+				to znači da dokle god postoje brojači u registru broj dva, on će toliko puta otići u 
+				registar broj 1 i dodati po jedan brojač u njega.
+			</p>
+
+			<p>
+				Kada se registar broj 2 isprazni, registarski stroj će produžiti strjelicom broj 3, što 
+				označava kraj računske radnje. Kada radnja završi, registarski stroj će zaviriti u 
+				registar broj 1 i na primjerice računalnom zaslonu izbaciti rezultat, tj. isčitati će
+				koliko brojača nam je ostalo u registru broj 1. To će u ovom slučaju biti 4 brojača.
+			</p>
+
+			<p>
+				Idemo vidjeti kako bi to izgledalo zapisano u logičkom jeziku:
+
+				<br>
+				+ (2, 2)
+				<br>
+				r1: 2
+				<br>
+				r2: 2
+				<br>
+				-------------------
+
+				<br>
+				Rooo''o''
+				<br>
+				Ro'o'o''o'
+				<br>
+				Ro''o''o'''o'
+				<br>
+				Ro'''o'o'''o
+				<br>
+				Ro''''o''o''''o
+				<br>
+				Ro'''''o'''o''''o
+			</p>
+
+			<p>
+				Što sad sve ovo znači? Vidimo kako imamo 4 puta o. Da ne bi bilo zabune, to nije slovo o,
+				već broj nula. Osim o imamo i apostrofe '. Oni označavaju neku određenu količinu nečega.
+				Da vidimo prvi redak; Rooo''o''; prvi redak nam govori da imamo nula nečega, nula nečega, 
+				pa dva nečega i još dva nečega. 
+			</p>
+
+			<p>
+				Prva nula nam označava neki određeni trenutak. Zbog toga nam se u svakom retku broj iznad 
+				nule uvijek povećava za 1, tj. za ', jer sa svakim novim trenutkom ulazimo u novi redak. 
+			</p>
+
+			<p>
+				Druga nula nam označava po kojoj strjelici se registarski stroj kreće u tom određenom 
+				trenutku.
+			</p>
+
+			<p>
+				Treća nula nam govori koliki broj brojača nam se nalazi u <u>prvom</u> registru, dok nam
+				četvrta nula sa svojom količinom ' govori koliki se broj brojača nalazi u <u>drugom</u>
+				registru.
+			</p>
+
+			<p>
+				Kako to onda na kraju čitamo? Čitamo na sljedeći način; "u trenutku __ nalazimo se na 
+				strjelici broj __, a stanje u registru jedan je __ brojača, dok je stanje u registru 
+				dva __ brojača.
+			</p>
+
+			<p>
+				Dakle, za slučaj Rooo''o'' mogli bismo reći kako se u trenutku _0_ nalazimo na 
+				strjelici broj _0_, a stanje u registru jedan je _2_ brojača, dok je stanje u registru 
+				dva _2_ brojača.
+				<br>
+				Za slučaj Ro'o'o''o' kažemo da se u trenutku _1_ nalazimo na strjelici broj _1_, 
+				a stanje u registru jedan je _2_ brojača, dok je stanje u registru dva _1_ brojač.
+				<br>
+				Za Ro''o''o'''o' kažemo da se u trenutku _2_ nalazimo na strjelici broj _2_, 
+				a stanje u registru jedan je _3_ brojača, dok je stanje u registru dva _1_ brojač.
+				<br>
+				Za Ro'''o'o'''o kažemo da se u trenutku _3_ nalazimo na strjelici broj _1_, 
+				a stanje u registru jedan je _3_ brojača, dok je stanje u registru dva _0_ brojača.
+				<br>
+				Za Ro''''o''o''''o kažemo da se u trenutku _4_ nalazimo na strjelici broj _2_, 
+				a stanje u registru jedan je _4_ brojača, dok je stanje u registru dva _0_ brojača.
+				<br>
+				I na kraju, za Ro'''''o'''o''''o kažemo da se u trenutku _5_ nalazimo na strjelici broj 
+				_3_, a stanje u registru jedan je _4_ brojača, dok je stanje u registru dva _0_ brojača.
+			</p>
+
+			<p style="text-align:right">
+				<a class="lista" href="Registarskistroj.html">1</a>
+				<a class="lista" href="Registarskistroj1.html">2</a>
+				<a class="lista" href="Registarskistroj2.html">3</a>
+			</p>
+		</div>
+	</div>
+
+<script>
+
+var c=document.getElementById("regstroj");
+var ctx=c.getContext("2d");
+
+//Registar 2:
+ctx.beginPath();
+ctx.arc(90,85,25,0,2*Math.PI);
+ctx.stroke();
+ctx.font="bold 15px Times";
+ctx.lineWidth=3;
+ctx.fillText("2 -",80,90);
+ctx.stroke();
+
+//Registar 1:
+ctx.beginPath();
+ctx.arc(190,85,25,0,2*Math.PI);
+ctx.stroke();
+ctx.font="bold 15px Times";
+ctx.lineWidth=3;
+ctx.fillText("1 -",180,90);
+
+//Strjelica 2:
+ctx.beginPath();
+ctx.arc(140,70,50,9.64,1.94*Math.PI);
+ctx.stroke();
+ctx.font="bold 15px Times";
+ctx.lineWidth=3;
+ctx.fillText("1 +",180,90);
+
+//Strjelica 0:
+ctx.beginPath();
+ctx.moveTo(25,85);
+ctx.lineTo(65,85);
+ctx.stroke();
+
+//Strjelica1:
+ctx.beginPath();
+ctx.moveTo(115,85);
+ctx.lineTo(165,85);
+ctx.stroke();
+
+//Strjelica 3:
+ctx.beginPath();
+ctx.moveTo(90,110);
+ctx.lineTo(90,145);
+ctx.stroke();
+
+
+//Vrh 0:
+ctx.beginPath();
+ctx.moveTo(65,85);
+ctx.lineTo(55,80);
+ctx.stroke();
+ctx.fillText("0",40,75);
+ctx.beginPath();
+ctx.moveTo(65,85);
+ctx.lineTo(55,90);
+ctx.stroke();
+
+
+//Vrh 1:
+ctx.beginPath();
+ctx.moveTo(165,85);
+ctx.lineTo(155,80);
+ctx.stroke();
+ctx.fillText("1",135,75);
+ctx.beginPath();
+ctx.moveTo(165,85);
+ctx.lineTo(155,90);
+ctx.stroke();
+
+
+//Vrh 2:
+ctx.beginPath();
+ctx.moveTo(91,60);
+ctx.lineTo(100,50);
+ctx.stroke();
+ctx.fillText("2",135,15);
+ctx.beginPath();
+ctx.moveTo(90,60);
+ctx.lineTo(90,45);
+ctx.stroke();
+
+//Vrh 3:
+ctx.beginPath();
+ctx.moveTo(90,145);
+ctx.lineTo(95,135);
+ctx.stroke();
+ctx.fillText("3",80,130);
+ctx.fillText("p",92,129);
+ctx.beginPath();
+ctx.moveTo(90,145);
+ctx.lineTo(85,135);
+ctx.stroke();
+
+
+function mijenjaj1(obj)
+{
+obj.style.backgroundColor="#808080"
+}
+
+function mijenjaj2(obj)
+{
+obj.style.backgroundColor=""
+}
+
+</script>
+
+</body>
+
+</html>

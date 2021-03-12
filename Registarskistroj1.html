@@ -1,0 +1,303 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Logika - Registarski stroj</title>
+
+	<link rel="stylesheet" type="text/css" href="Stranica.css" />
+
+</head>
+
+<body>
+
+	<nav>
+
+		<ul>
+			<li class="shadow">
+				<a href="Pocetna.html">Početna</a>
+			</li>
+			<li class="shadow">
+				<a class="shadow" href="Zivotopis.html">Životopis</a>
+			</li>
+			<li class="shadow">
+				<a href="Logika.html">Logika</a>
+			</li>
+		</ul>
+	</nav>
+
+	<div id="MainContainer">
+		<div class="left">
+			<nav class="izbornik">
+				<ul class="izbornik">
+					<li class="izbornik">
+						<a class="izbornik" href="Iskaznalogika.html">Iskazna logika</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Prirocnalogika.html">Priročna logika</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Istinitosnatablica.html">Istinitosna tablica</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Istinitosnostablo.html">Istinitosno stablo</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Dokaz.html">Dokaz</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="PKiDNO.html">PKiDNO</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Registarskistroj.html">Registarski stroj</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+		<div class="tekst">
+
+			<h3>
+				Zaključak u registarskom stroju
+			</h3>
+
+			<p>
+				Nakon što smo opisali sve radnje koje su se odvijale tokom zbrajanja, trebamo napisati 
+				zaključak uz argumente za sva čvorišta. To se piše na sljedeći način:
+			</p>
+			<p>
+				<br>
+				Rooo''o'' - Početno stanje u registru
+				<br>
+				&lt; 0, 1&gt; &nbsp; ∀x∀y<sub>1</sub>∀y<sub>2</sub> (Rxoy<sub>1</sub>y<sub>2</sub>' → Rx'o'y<sub>1</sub>y<sub>2</sub>)
+				<br>
+				&lt; 1, 2&gt; &nbsp; ∀x∀y<sub>1</sub>∀y<sub>2</sub> (Rxo'y<sub>1</sub>y<sub>2</sub> → Rx'o''y<sub>1</sub>'y<sub>2</sub>)
+				<br>
+				&lt; 2, 1&gt; &nbsp; ∀x∀y<sub>1</sub>∀y<sub>2</sub> (Rxo''y<sub>1</sub>y<sub>2</sub>' → Rx'o'y<sub>1</sub>y<sub>2</sub>)
+				<br>
+				&lt; 2, 3&gt; &nbsp; ∀x∀y<sub>1</sub> (Rxo''y<sub>1</sub>o → Rx'o'''y<sub>1</sub>o)
+				<br>
+				------------------------------------------------------------
+				<br>
+				Ro'''''o'''o''''o - Krajnje stanje u registru
+			</p>
+
+			<p>
+				Ovdje smo iznijeli argumente za sva čvorišta koja imamo u računskoj radnji +(2, 2). Na
+				prvom čvorištu, čvorištu strjelica 0 i 1, tj. &lt; 0, 1&gt; u stvari možemo isčitati što se
+				događa prije i poslije prolaska kroz to čvorište. Prvo, prije pogodbe imamo x, a nakon
+				nje x'. To nam govori kako nije važno u kojem se trenutku nalazimo prije prolaska kroz
+				čvorište, već da je važno kako se nakon prolaska kroz čvorište, tj. nakon pogodbe 
+				nalazimo u idućem(sljedbeničkom) trenutku, x'. 
+			</p>
+
+			<p>
+				Nadalje, prije pogodbe imamo oznaku o koja 
+				nam govori kako se nalazimo na strjelici nula, a nakon pogodbe imamo oznaku o', koja nam
+				govori kako se nakon prolaska kroz čvorište nalazimo na strjelici jedan. 
+				Ono što se dalje događa u tom čvorištu, a i što opisujemo u ovim arguentima jest
+				to da iz registra broj 2 uzimamo jedan brojač. To smo označili tako što smo iznad 
+				y<sub>2</sub> koji se nalazi prije pogodbe stavili znak ', a iza pogodbe smo ostavili
+				y<sub>2</sub> bez znaka sljedbenika, što ukazuje na to da nakon prolaska kroz čvorište
+				&lt; 0, 1&gt; mičemo jedan brojač iz registra broj 2, neovisno o tome koliko brojača ima u njemu
+				u tom trenu. Primjetimo kako se y<sub>1</sub> ostaje bez ikakvog brojača i prije i poslije
+				znaka pogodbe, zato jer se u registru broj 1 pri čvorištu &lt; 0, 1&gt; ništa ne događa.
+			</p>
+
+			<p>
+				Na sljedećem čvorištu, čvorištu strjelica 1 i 2; &lt; 1, 2&gt; opet možemo vidjeti što se događa
+				tokom prolaska programa kroz to čvorište. x će u svim čvorištima prije pogodbe biti lišen
+				sljedbeničke oznake, a nakon pogodbe će imati oznaku x'. Što se tiče strjelica, one će uvijek 
+				prije pogodbe imati količinu ' jednaku onom broju koji se nalazi u &lt; &gt; zagradama. Tako ćemo
+				za čvorište &lt; 1, 2&gt; prije pogodbe imati o', a nakon o'', za čvorište &lt; 2, 1&gt; ćemo imati
+				slučaj o'', o', a za čvorište &lt; 2, 3&gt; ćemo imati slučaj o'' i o'''. 
+			</p>
+
+			<p> 
+				Što se tiče registara, na čvorištu &lt; 1, 2&gt; ćemo imati slučaj da u registar 1 dodajemo jedan 
+				brojač, što dakako označujemo tako da nakon pogodbe iznad y<sub>1</sub> dodamo ', kako bi smo 
+				naglasili da nam konkretan broj brojača u registru broj 1 nije važan, već nam je važno to da
+				nakon prolaska kroz to čvorište u njemu ima jedan brojač više nego prije prolaska kroz to
+				čvorište. U ovom slučaju y<sub>2</sub> ostaje bez znaka sljedbenika.
+			</p>
+
+			<p>
+				Za čvorište &lt; 2, 1&gt; prepisujemo sve što imamo i u slučaju čvorišta &lt; 1, 2&gt;, osim poretka 
+				strjelica &lt; o'', o'&gt;, zato jer kao i u slučaju čvorišta &lt; 1, 2&gt; iz registra broj 2 uzimamo 
+				1 brojač.
+			</p>
+
+			<p>
+				I na kraju, za čvorište strjelica 2 i 3 &lt; 2, 3&gt; umjesto y<sub>2</sub> stavljamo o, jer nam 
+				to označuje da je registar broj 2 prazan, dok iznad y<sub>1</sub> ne stavljamo nikakve oznake
+				za brojače, pošto se u registru broj 1 ništa ne mijenja.
+			</p>
+
+			<h3>
+				Oduzimanje
+			</h3>
+
+			<p>
+				Sada kada smo objasnili proces zbrajanja, možemo se prebaciti na oduzimanje. Pa, idemo prvo
+				vidjeti kako izgleda registarski stroj u slučaju oduzimanja:
+			</p>
+
+			<canvas id="regstroj" onmouseover="mijenjaj1(this)" onmouseout="mijenjaj2(this)">
+				Your browser does not support canvas
+			</canvas>
+
+
+			<p>
+				Prvo što je vrlo vjerojatno svima upalo u oči jest to da ova shema izgleda isto kao i ona za
+				zbrajanje, uz jednu razliku, a ta je da se u registru broj 1 umjesto + nalazi -, jer u ovom
+				slučaju iz registra broj 1 logično, oduzimamo brojače. Čak i kada opisujemo argumente za čvorišta,
+				oni zgledaju slično kao i za zbrajanje, ali o tome ćemo nešto kasnije. 
+			</p>
+
+			<p>
+				Sada idemo vidjeti kako bi proces oduzimanja izgledao zapisan u logičkom jeziku:
+
+				<br>
+				- (2, 2)
+				<br>
+				r1: 2
+				<br>
+				r2: 2
+				<br>
+				-------------------
+
+				<br>
+				Rooo''o''
+				<br>
+				Ro'o'o''o'
+				<br>
+				Ro''o''o'o'
+				<br>
+				Ro'''o'o'o
+				<br>
+				Ro''''o''oo
+				<br>
+				Ro'''''o'''oo
+			</p>
+
+			<p style="text-align:right">
+				<a class="lista" href="Registarskistroj.html">1</a>
+				<a class="lista" href="Registarskistroj1.html">2</a>
+				<a class="lista" href="Registarskistroj2.html">3</a>
+			</p>
+		</div>
+	</div>
+
+<script>
+
+var c=document.getElementById("regstroj");
+var ctx=c.getContext("2d");
+
+//Registar 2:
+ctx.beginPath();
+ctx.arc(90,85,25,0,2*Math.PI);
+ctx.stroke();
+ctx.font="bold 15px Times";
+ctx.lineWidth=2;
+ctx.fillText("2 -",80,90);
+ctx.stroke();
+
+//Registar 1:
+ctx.beginPath();
+ctx.arc(190,85,25,0,2*Math.PI);
+ctx.stroke();
+ctx.font="bold 15px Times";
+ctx.lineWidth=2;
+ctx.fillText("1 -",180,90);
+
+//Strjelica 2:
+ctx.beginPath();
+ctx.arc(140,70,50,9.64,1.94*Math.PI);
+ctx.stroke();
+ctx.font="bold 15px Times";
+ctx.lineWidth=2;
+ctx.fillText("1 -",180,90);
+
+//Strjelica 0;
+ctx.beginPath();
+ctx.moveTo(25,85);
+ctx.lineTo(65,85);
+ctx.stroke();
+
+
+//Strjelica1:
+ctx.beginPath();
+ctx.moveTo(115,85);
+ctx.lineTo(165,85);
+ctx.stroke();
+
+//Strjelica 3:
+ctx.beginPath();
+ctx.moveTo(90,110);
+ctx.lineTo(90,145);
+ctx.stroke();
+
+
+//Vrh 0:
+ctx.beginPath();
+ctx.moveTo(65,85);
+ctx.lineTo(55,80);
+ctx.stroke();
+ctx.fillText("0",40,75);
+ctx.beginPath();
+ctx.moveTo(65,85);
+ctx.lineTo(55,90);
+ctx.stroke();
+
+
+//Vrh 1:
+ctx.beginPath();
+ctx.moveTo(165,85);
+ctx.lineTo(155,80);
+ctx.stroke();
+ctx.fillText("1",135,75);
+ctx.beginPath();
+ctx.moveTo(165,85);
+ctx.lineTo(155,90);
+ctx.stroke();
+
+
+//Vrh 2:
+ctx.beginPath();
+ctx.moveTo(91,60);
+ctx.lineTo(100,50);
+ctx.stroke();
+ctx.fillText("2",135,15);
+ctx.beginPath();
+ctx.moveTo(90,60);
+ctx.lineTo(90,45);
+ctx.stroke();
+
+
+//Vrh 3:
+ctx.beginPath();
+ctx.moveTo(90,145);
+ctx.lineTo(95,135);
+ctx.stroke();
+ctx.fillText("3",80,130);
+ctx.fillText("p",92,129);
+ctx.beginPath();
+ctx.moveTo(90,145);
+ctx.lineTo(85,135);
+ctx.stroke();
+
+function mijenjaj1(obj)
+{
+obj.style.backgroundColor="#808080"
+}
+
+function mijenjaj2(obj)
+{
+obj.style.backgroundColor=""
+}
+
+</script>
+
+
+</body>
+
+</html>

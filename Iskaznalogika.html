@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Vedran Anzulović</title>
+
+	<link rel="stylesheet" type="text/css" href="Stranica.css" />
+
+</head>
+
+<body>
+
+	<nav>
+
+		<ul>
+			<li class="shadow">
+				<a href="Pocetna.html">Početna</a>
+			</li>
+			<li class="shadow">
+				<a class="shadow" href="Zivotopis.html">Životopis</a>
+			</li>
+			<li class="shadow">
+				<a href="Logika.html">Logika</a>
+			</li>
+		</ul>
+
+	</nav>
+
+	<div id="MainContainer">
+		<div class="left">
+			<nav class="izbornik">
+				<ul class="izbornik">
+					<li class="izbornik">
+						<a class="izbornik" href="Iskaznalogika.html">Iskazna logika</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Prirocnalogika.html">Priročna logika</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Istinitosnatablica.html">Istinitosna tablica</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Istinitosnostablo.html">Istinitosno stablo</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Dokaz.html">Dokaz</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="PKiDNO.html">PKiDNO</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Registarskistroj.html">Registarski stroj</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+		<div class="tekst">
+
+			<h2>
+				Iskazna logika
+			</h2>
+
+			<p>
+				Li ili jezik iskazne logike, kao i svaki drugi jezik sastoji se od dvije stvari, 
+				a to su sintaksa (rječnik i gramatika) te semantika (značenje) tog jezika. U ovom
+				dijelu baviti ćemo se sintaksom, a semantikom u dijelu o izgradnji istinitosne 
+				tablice.
+			</p>
+
+			<h3>
+				Rječnik
+			</h3>
+
+			<p>
+			Rječnik Li-a sastoji se od 3 stvari, a to su:
+			</p>
+			<p style="text-indent:10%">1. Iskazna slova
+			</p>
+			<p style="text-indent:10%">2. Poveznici
+			</p>
+			<p style="text-indent:10%">3. Interpunkcija
+			</p>
+
+			<h3>
+				Iskazna slova
+			</h3>
+
+			<p>
+				Iskazna slova Li jezika jesu neformalno tiskana slova latinične abecede,
+				počevši od A, B, C,...A<span class="size">1</span>, B<span class="size">1</span>, 
+				C<span class="size">1</span>, A<span class="size">n</span>... itd. Formalno bi to trebala biti 
+				samo italična slova <em>P, Q, R, P<span class="size">1</span>, Q<span class="size">1</span>, 
+				R<span class="size">1</span>, P<span class="size">n</span></em>,... itd. ali se radi praktičnosti
+				uglavnom koristimo neformalnim načinom pisanja iskaza u Li jeziku.
+			</p>
+
+			<p>
+				Zašto je tako praktičnije? Pa, jedno iskazno slovo označuje jedan iskaz. Primjerice,
+				iskaz: "Ivan je čovjek" ili "Idem u skupi disko" bi smo formalno trebali označiti 
+				slovima P, Q ili R. No, kako bi si olakšali pamćenje, umjesto tim slovima iskaz "Ivan 
+				je čovjek" označit ćemo slovima I ili Č, pošto nas I asocira na Ivana, a Č na čovjeka. 
+				Važno je jedino to da onda u ostatku zadatka koristimo isto slovo za označavanje istog 
+				iskaza, kako ne bi smo zbunili sami sebe, a  ni druge.
+			</p>
+
+			<h3>
+				Poveznici
+			</h3>
+
+			<p>
+				Kao što im samo ime govori, oni nešto povezuju, a postoje jednomjesni i dvomjesni
+				poveznici. Jednomjesni se vežu uz jedan iskaz, a dvomjesni povezuju dva iskaza. 
+				Poveznici u Li jeziku su sljedeći: ¬, ∧, ∨, →, ↔.
+			</p>
+
+			<p> 
+				"¬" je jednomjesni poveznik ( ¬_ ) i on označava nijek te ga stoga koristimo kada nešto 
+				želimo zanijekati. Tako ga primjerice možemo iskoristiti uz iskaz "Idem u skupi disko",
+				tako da napišemo ¬I. Taj iskaz bi onda glasio: "Ne idem u skupi disko".
+			</p>
+
+			<p>
+				Sljedeći u nizu poveznika dolazi nam "∧". Taj poveznik je dvomjestan ( _∧_ ) i označava 
+				konjunktivne poveznike (i, pa, te, itd.). Najčešće korišteni poveznik je i, ali 
+				nije i jedini, tako da moramo pripaziti na to pri prevođenju na jezik Li. Primjer
+				za ovaj poveznik bi nam mogao biti: "Zovem se Ivan i idem u skupi disko". Pri tome
+				ćemo iskaz "Zovem se Ivan" označiti velikim latiničnim slovom I, a iskaz "Idem u skupi 
+				disko" recimo slovom D. tako da bi nam taj iskaz, preveden 
+				na jezik Li izgledao ovako: I∧D.
+			</p>
+
+			<p>
+				Nakon konjunkcije, dolazimo do disjunkcije, koja također ima dvomjestan ( _∨_ ) poveznik. 
+				Znak za disjunkciju je "∨". Na disjunkciju upučuje hrvatska riječ ili. Kao primjer za 
+				dijunkciju možemo navesti primjerice iskaz: "Sjedim pred računalom ili pred televizorom".
+				za iskaz "Sjedim pred računalom" ćemo uzeti slovo R, a za iskaz "pred televizorom" ćemo
+				uzeti slovo T, stoga će taj iskaz u Li jeziku glasiti R∨T.
+			</p>
+
+			<p>
+				Poveznik "→" je također dvomjestan ( _→_ ). Taj poveznik označava pogodbu i ona uglavnom
+				ima oblik <u>ako</u> nešto, <u>onda</u> nešto. Tako primjerice možemo uzeti iskaz: 
+				"Ako pada kiša, onda je pločnik mokar" i to tako da za "pada kiša" označimo slovom K,
+				a iskaz "pločnik je mokar" označimo slovom M. Bilo bi dobro imati na umu da u samom
+				iskazu na hrvatskom jeziku riječ "onda" može biti izostavljena, tako da bi iskaz tada
+				glasio "Ako pada kiša, ulice su mokre". Prijevod tog iskaza na Li jezik izgleda ovako:
+				K→M.
+			</p>
+
+			<p>
+				Posljednji u nizu poveznika je opet dvomjestan ( _↔_ ) i on označava dvopogodbu. 
+				Dvopogodba uvijek ima oblik <u>ako i samo ako</u> nešto, <u>onda</u> nešto. Skraćeno
+				to možemo pisati akko. Dakako, isto kao i u slučaju s pogodbom, ovdje možemo izostaviti
+				riječ "onda". Tako da za primjer možemo uzeti iskaz: "Ako i samo ako napišeš zadaću,
+				moći ćeš se ići igrati na dvorište", gdje ćemo za iskaz "napišeš zadaću" uzeti recimo 
+				slovo Z, a za iskaz "moći ćeš se ići igrati na dvorište" ćemo uzeti slovo D. Tako bi
+				nam krajnji iskaz, preveden u jezik Li, trebao izgledati ovako: Z↔D.
+			</p>
+			<p style="text-align:right">
+				<a class="lista" href="Iskaznalogika.html">1</a>
+				<a class="lista" href="Iskaznalogika1.html">2</a>
+				<a class="lista" href="Istinitosnatablica.html">→</a>
+			</p>
+		
+		</div>
+
+	</div>
+
+</body>
+
+
+</html>

@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Logika - Registarski stroj</title>
+
+	<link rel="stylesheet" type="text/css" href="Stranica.css" />
+
+</head>
+
+<body>
+
+	<nav>
+
+		<ul>
+			<li class="shadow">
+				<a href="Pocetna.html">Početna</a>
+			</li>
+			<li class="shadow">
+				<a class="shadow" href="Zivotopis.html">Životopis</a>
+			</li>
+			<li class="shadow">
+				<a href="Logika.html">Logika</a>
+			</li>
+		</ul>
+	</nav>
+
+	<div id="MainContainer">
+		<div class="left">
+			<nav class="izbornik">
+				<ul class="izbornik">
+					<li class="izbornik">
+						<a class="izbornik" href="Iskaznalogika.html">Iskazna logika</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Prirocnalogika.html">Priročna logika</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Istinitosnatablica.html">Istinitosna tablica</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Istinitosnostablo.html">Istinitosno stablo</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Dokaz.html">Dokaz</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="PKiDNO.html">PKiDNO</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Registarskistroj.html">Registarski stroj</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		
+		<div class="tekst">
+
+			<h3>
+				Zaključak u registarskom stroju za oduzimanje
+			</h3>
+
+			<p>
+				Nakon što smo opisali sve radnje koje su se odvijale tokom oduzimanja, trebamo napisati 
+				zaključak uz argumente za sva čvorišta. To se piše na sljedeći način:
+			</p>
+			<p>
+				<br>
+				Rooo''o'' - Početno stanje u registru
+				<br>
+				&lt; 0, 1&gt; &nbsp; ∀x∀y<sub>1</sub>∀y<sub>2</sub> (Rxoy<sub>1</sub>y<sub>2</sub>' → Rx'o'y<sub>1</sub>y<sub>2</sub>)
+				<br>
+				&lt; 1, 2&gt; &nbsp; ∀x∀y<sub>1</sub>∀y<sub>2</sub> (Rxo'y<sub>1</sub>'y<sub>2</sub> → Rx'o''y<sub>1</sub>y<sub>2</sub>)
+				<br>
+				&lt; 2, 1&gt; &nbsp; ∀x∀y<sub>1</sub>∀y<sub>2</sub> (Rxo''y<sub>1</sub>y<sub>2</sub>' → Rx'o'y<sub>1</sub>y<sub>2</sub>)
+				<br>
+				&lt; 2, 3&gt; &nbsp; ∀x∀y<sub>1</sub> (Rxo''y<sub>1</sub>o → Rx'o'''y<sub>1</sub>o)
+				<br>
+				------------------------------------------------------------
+				<br>
+				Ro'''''o'''oo - Krajnje stanje u registru
+			</p>
+
+			<p>
+				Kao što vidimo, zaključak za oduzimanje sadrži potpuno iste argumente za sva čvorišta
+				kao i za zbrajanje, uz razliku u čvorištu &lt; 1, 2&gt; i u krajnjem stanju u registru.
+			</p>
+
+			<p style="text-align:right">
+				<a class="lista" href="Registarskistroj.html">1</a>
+				<a class="lista" href="Registarskistroj1.html">2</a>
+				<a class="lista" href="Registarskistroj2.html">3</a>
+			</p>
+		</div>
+	</div>
+
+</body>
+
+</html>
