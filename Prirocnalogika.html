@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+
+	<title>Vedran Anzulović</title>
+
+<link rel="stylesheet" type="text/css" href="Stranica.css" />
+
+</head>
+
+<body>
+
+	<nav>
+
+		<ul>
+			<li class="shadow">
+				<a href="Pocetna.html">Početna</a>
+			</li>
+			<li class="shadow">
+				<a class="shadow" href="Zivotopis.html">Životopis</a>
+			</li>
+			<li class="shadow">
+				<a href="Logika.html">Logika</a>
+			</li>
+		</ul>
+	</nav>
+
+	<div id="MainContainer">
+		<div class="left">
+			<nav class="izbornik">
+				<ul class="izbornik">
+					<li class="izbornik">
+						<a class="izbornik" href="Iskaznalogika.html">Iskazna logika</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Prirocnalogika.html">Priročna logika</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Istinitosnatablica.html">Istinitosna tablica</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Istinitosnostablo.html">Istinitosno stablo</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Dokaz.html">Dokaz</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="PKiDNO.html">PKiDNO</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Registarskistroj.html">Registarski stroj</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+		<div class="tekst">
+
+			<h2>
+				Priročna logika
+			</h2>
+
+			<p>
+				Jezik priročne logike nazvat ćemo Lp. I on poput Li-a ima svoju sintaksu i svoju semantiku.
+				Rječnik Lp-a je u stvari nadogradnja rječnika Li-a, kao što ćemo i vidjti u nastavku.
+			</p>
+
+			<h3>
+				Rječnik
+			</h3>
+
+			<p>
+				Kao i u Li jeziku, imamo:
+			</p>
+			<p style="text-indent:10%">
+				1. Iskazna slova
+			</p>
+			<p style="text-indent:10%">
+				2. Poveznike
+			</p>
+			<p style="text-indent:10%">
+				3. Interpunkciju
+			</p>
+
+			<p>
+				ali uza ta tri, jezik Lp-a ćemo proširiti s još 4 elementa, a to su:
+			</p>
+
+			<p style="text-indent:10%">
+				4. Priroci
+			</p>
+			<p style="text-indent:10%">
+				5. Predmetne konstante
+			</p>
+			<p style="text-indent:10%">
+				6. Predmetne varijable i 
+			</p>
+			<p style="text-indent:10%">
+				7. Količiteljni simboli
+			</p>
+
+			<h3>
+				Priroci
+			</h3>
+
+			<p>
+				Priroci su velika latinična slova anglo-američke abecede, s pozitivnim cijelim gornjim 
+				pokazateljem i sa ili bez pozitivnog cijelog donjeg pokazatelja. Tako su priroci slova: 
+				A<sup>1</sup>, B<sup>1</sup>, C<sup>1</sup>,..., A<sup>1</sup><sub>1</sub>,..., 
+				A<sup>2</sup>,..., A<sup>2</sup><sub>1</sub>,... itd.
+			</p>
+
+			<p>
+				Gornji pokazatelj pokazuje koliko mjesni je taj prirok. Primjerice, prirok V<sup>1</sup>
+				je jednomjestan i može stajati za izraz: _ je visok. Prirok V<sup>2</sup> je dvomjestan
+				i on može označavati primjerice izraz: _ je veći od _. Priroci mogu biti tromjesni, 
+				četveromjesni, n-mjesni, ali u praksi ćemo se rijetko susretati i sa tromjesnim, a kamo li
+				ne s četveromjesnim ili višemjesnim od toga.
+			</p>
+
+			<h3>
+				Predmetne konstante
+			</h3>
+
+			<p>
+				Predmetne konstante su mala latinična slova anglo-američke abecede, od "a" do "v", sa ili 
+				bez pozitivnog cijelog donjeg pokazatelja. One su slične imenima u Hrvatskom jeziku.
+				tako primjerice za nečije ime, primjerice Ivičino, možemo uzeti slovo "i" i prireči
+				ga nekom priroku, kao što je prirok V<sup>1</sup> da bismo dobili rečenicu koja izgleda
+				ovako: V<sub>i</sub>, a označavala bi hrvatsku rečenicu: "Ivica je visok". Isto tako
+				bismo za konstantu mogli uzeti slovo "j", koje bi primjerice označavalo ime Jan i prireči 
+				ga priroku V<sup>2</sup>, skupa s konstantom "i", tako da bismo dobili sljedeću rečenicu:
+				Vji, što bi na hrvatskom značilo: "Jan je veći od Ivice".
+			</p>
+
+			<h3>
+				Predmetne varijable
+			</h3>
+
+			<p>
+				Predmetne konstante su mala latinična slova anglo-američke abecede, od "w" do "z",
+				sa ili bez pozitivnog cijelog donjeg pokazatelja.  w, x, y, z, w<sub>1</sub>,..., 
+				w<sub>2</sub>,..., w<sub>n</sub>.
+			</p>
+
+			<p>
+				Predmetne varijable možemo zamijeniti bilo kojom predmetnom konstantom. Tako primjerice
+				možemo imati slučaj rečenice ∃xVxi, što na hrvatskom možemo čitati ovako: "Netko/nešto je 
+				veći od Ivice". tko je taj netko ili nešto nije važno, jer umjesto tog x možemo ubaciti
+				bilo koju konstantu. Tako recimo umjesto tog x možemo ubaciti slovo "n", koje može 
+				označavati recimo neboder, ako smo domenu (D) proširili izvan ljudskih bića (ali o tome
+				nešto kasnije). Dakle, ako ubacimo slovo "n" za neboder, tada dobivamo sljedeći iskaz:
+				Vni, što na hrvatskom znači "Neboder je veći od Ivana".
+			</p>
+
+			<h3>
+				Količiteljni simboli
+			</h3>
+
+			<p>
+				Postoje dva količiteljna simbola i oni su <strong>opći</strong> ∀ (naopaki A) i 
+				<strong>opstojni</strong> ∃ (naopaki E), a čitaju se kao "svi" i kao "neki".
+			</p>
+
+			<p style="text-align:right">
+				<a class="lista" href="Prirocnalogika.html">1</a>
+				<a class="lista" href="Prirocnalogika1.html">2</a>
+				<a class="lista" href="Prirocnalogika2.html">3</a>
+			</p>
+		</div>
+	</div>
+
+</body>
+
+</html>

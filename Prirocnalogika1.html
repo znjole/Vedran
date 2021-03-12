@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Vedran Anzulović</title>
+
+	<link rel="stylesheet" type="text/css" href="Stranica.css" />
+
+</head>
+
+
+<body>
+
+	<nav>
+
+		<ul>
+			<li class="shadow">
+				<a href="Pocetna.html">Početna</a>
+			</li>
+			<li class="shadow">
+				<a class="shadow" href="Zivotopis.html">Životopis</a>
+			</li>
+			<li class="shadow">
+				<a href="Logika.html">Logika</a>
+			</li>
+		</ul>
+	</nav>
+
+	<div id="MainContainer">
+		<div class="left">
+			<nav class="izbornik">
+				<ul class="izbornik">
+					<li class="izbornik">
+						<a class="izbornik" href="Iskaznalogika.html">Iskazna logika</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Prirocnalogika.html">Priročna logika</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Istinitosnatablica.html">Istinitosna tablica</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Istinitosnostablo.html">Istinitosno stablo</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Dokaz.html">Dokaz</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="PKiDNO.html">PKiDNO</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Registarskistroj.html">Registarski stroj</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+		<div class="tekst">
+
+			<h3>
+				Kako slažemo iskaze u Lp jeziku?
+			</h3>
+
+			<p>
+				Jednostavno. Počevši od jednostavnih formula, kao što je Vx, što može stajati "netko ili
+				nešto je veliko", ili Vi, što može stajati za "Ivica je velik". Kada slažemo formule u 
+				Lp jeziku, među ostalime moramo paziti na redoslijed predmetnih konstanata i varijabli u 
+				višemjesnim formulama. Tako primjerice kada pišemo formulu Vni, moramo imati na umu
+				da pošto V stoji za: "_ je veći od _", predmetna konstanta ili varijabla za ono što 
+				je veće, uvijek mora stajati s desne strane, a ono što je manje, mora stajati s lijeve
+				strane. Ti parovi predmetnih konstanata i varijabli su uvijek uređeni. V &lt;neboder, Ivica&gt;.
+				s druge strane, iz očitog razloga V &lt;Ivica, neboder&gt; nikako ne bi moglo biti istinito.
+			</p>
+
+			<p>
+				Također možemo slagati i složenije formule, kao što su (Vi∧Vni), što bi na hrvatskome 
+				glasilo: "Ivica je velik, ali je neboder veći od Ivice". Kao i u Li jeziku, moramo 
+				paziti na doseg poveznika i moramo znati razlučiti glavni od sporednih poveznika.
+			</p>
+
+			<p>
+				Kada u formule počnemo uvoditi količitelje, također moramo paziti i na njihov doseg.
+				U idućem primjeru ćemo neboder označiti prirokom N<sup>1</sup> što će nam stajati za 
+				_ je neboder. Također ćemo uvesti količitelj za svaki (∀). Neka hrvatska rečenica koju 
+				želimo prevesti na Lp bude "Svaki neboder je veći od Ivice". Sada mijenjamo konstantu 
+				n varijablom x. Tako će taj iskaz preveden na Lp poprimiti sljedeći oblik: "∀x(Nx→Vxi)".
+				Doseg ∀x je u ovom slučaju podformula (Nx→Vxi), kojoj je poveznik →,a ∀x je glavni 
+				djelatelj. Na hrvatskom bismo to mogli čitati i kao "Svaki predmet (x), ako je predmet 
+				(x) neboder, onda je taj predmet (x) veći od i (u ovom slučaju Ivice)".
+			</p>
+
+			<p>
+				Kada bismo kojim slučajem imali neku drugu formulu koja glasi: "∀xNx→Vxi", dakle bez 
+				zagrada, tada bi nam doseg općeg količitelja bio samo Nx, bez Vxi, koji bi u tom slučaju
+				ostao nepokoličen. Doseg poveznika bi i dalje bila čitava formula. Dobro je imati na umu
+				da nam pri određivanju dosega količitelja i glavnog poveznika mnogo pomažu zagrade, tj.
+				interpunkcijski znakovi.
+			</p>
+
+			<h2>
+				Semantika
+			</h2>
+
+			<p>
+				U ovom dijelu ćemo objasniti značenja vrijednosti koje pridružujemo iskaznm slovima, 
+				predmetnim konstantama, prirocima jezika Lp. To ćemo nazvati tumačenjem prvog reda.
+			</p>
+
+			<h3>
+				Izbor predmetnog područja
+			</h3>
+
+			<p>
+				Da bismo se uopće mogli kretati u Lp jeziku, prvo što moramo odrediti jest predmetno
+				područje (domenu "D") u kojem će se rasprava odvijati. Za domenu vrijedi da mora 
+				sadržavati barem jednog člana, tj. da ne smije biti prazan skup, a ona se može 
+				odnositi na primjerice sve predmete, sve ljude, sve zgrade, sve životinje, sva 
+				živa bića, sve ljude s plavom kosom... itd. 
+				<br>
+				Izbor predmetnog područja na početku tumačenja možemo zapisati ovako: "D: ljudi".
+			</p>
+
+			<h3>
+				Tumačenje iskaznih slova
+			</h3>
+
+			<p>
+				Tumačenjem prvog reda svakom iskaznom slovu pridružujemo istinitosnu vrijednost. Tako 
+				primjerice za:
+			</p>
+			<p>
+				D: ljudi, 
+			</p>
+			<p>
+				A: i,
+				<br>
+				gdje je A iskazno slovo (trenutno nije važno što točno to slovo označuje), zapisujemo 
+				na sljedeći način: T(A)=i. To ćemo litati na sljedeći način: "tumačenje za iskaz A je 
+				takav da je A istinit". Iskaz A bi također mogao biti neistinit, ali nikako ne bi mogao
+				biti isinit i neistinit u isto vrijeme
+			</p>
+
+			<h3>
+				Tumačenje predmetnih konstanata
+			</h3>
+
+			<p>
+				Predmetnim konstantama pridružujemo neko značenje. Tako primjerice konstanti i možemo
+				pridodati značenje Ivica.
+			</p>
+
+			<p>
+				Tako možemo imati sljedeći slučaj:
+			</p>
+
+			<p>
+				D: ljudi, 
+			</p>
+
+			<p>
+				i: Ivica,
+
+				<br>
+				gdje se konstanta i odnosi na neki predmet domene ljudi. U ovom konkretnom slučaju taj 
+				je predmet Ivica. To možemo zapisati na sljedeći način; T(i): Ivica. To možemo čitati
+				na sljedeći način: "Tumačenje za "i" je takvo da "i" označuje Ivicu".
+			</p>
+
+			<p>
+				Kada bismo Ivicu htjeli označiti i slovom "v", to bi nam bilo dopušteno, ali nikako nam
+				ne bi bilo dopušteno u tom slučaju upotrijebiti niti slovo "i", niti slovo "v" za 
+				označavanje primjerice Igora ili Vinka. 
+			</p>
+
+			<p style="text-align:right">
+				<a class="lista" href="Prirocnalogika.html">1</a>
+				<a class="lista" href="Prirocnalogika1.html">2</a>
+				<a class="lista" href="Prirocnalogika2.html">3</a>
+			</p>
+		</div>
+	</div>
+</body>
+
+</html>

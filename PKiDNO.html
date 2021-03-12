@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Vedran Anzulović</title>
+
+	<link rel="stylesheet" type="text/css" href="Stranica.css" />
+
+</head>
+
+<body>
+
+	<nav>
+
+		<ul>
+			<li class="shadow">
+				<a href="Pocetna.html">Početna</a>
+			</li>
+			<li class="shadow">
+				<a class="shadow" href="Zivotopis.html">Životopis</a>
+			</li>
+			<li class="shadow">
+				<a href="Logika.html">Logika</a>
+			</li>
+		</ul>
+	</nav>
+
+	<div id="MainContainer">
+		<div class="left">
+			<nav class="izbornik">
+				<ul class="izbornik">
+					<li class="izbornik">
+						<a class="izbornik" href="Iskaznalogika.html">Iskazna logika</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Prirocnalogika.html">Priročna logika</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Istinitosnatablica.html">Istinitosna tablica</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Istinitosnostablo.html">Istinitosno stablo</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Dokaz.html">Dokaz</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="PKiDNO.html">PKiDNO</a>
+					</li>
+					<li class="izbornik">
+						<a class="izbornik" href="Registarskistroj.html">Registarski stroj</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+		<div class="tekst">
+
+			<h2>
+				PKiDNO
+			</h2>
+
+			<p>
+				Što uopće označava ta kratica? Ta kratica stoji za pojam "Potpuni Konjunktivni i Disjunktivni
+				Normalni Oblik". Kada smo obrađivali temu iskazne logike, rekli smo da ćemo se u Li jeziku
+				koristi s pet poveznika. Da se podsjetimo, to su bili ¬, ∧, ∨, →, ↔. U ovom dijelu lekcija
+				ćemo se zapitati je li moguće izbaciti neke od tih poveznika, a da taj podskup i dalje bude
+				izražajno potpun? Čini se da je to moguće i to tako da izbacimo čak dva poveznika; onaj
+				za pogodbu i onaj za dvopogodbu. Otuda i ime potpun konjunktivni normalni oblik i potpun
+				disjunktivni normalni oblik. Kako se izražavamo u njima?
+			</p>
+
+			<h3>
+				Potpun disjunktivni normalni oblik
+			</h3>
+
+			<p>
+				Kao prvo, moramo naglasiti da je potpun disjunktivni normalni oblik skup logično, disjunkata,
+				ali od kojih je svaki niz konjunkata. što to znači? Idemo vidjeti na primjeru jedne 
+				istinitosne tablice:
+			</p>
+				<table>
+					<tr>
+						<td><i>P</i></td>
+						<td><i>Q</i></td>
+						<td class="Vrijednosti"><i>P</i>∨<i>Q</i></td>
+					</tr>
+					<tr>	
+						<td><b style="color:#FF0000">i</b></td>
+						<td><b style="color:#FF0000">i</b></td>
+						<td class="vrijednosti">i &nbsp;<b style="color:#0000FF">i</b> &nbsp;i</td>
+					</tr>
+					<tr>
+						<td><b style="color:#FF0000">i</b></td>
+						<td><b style="color:#FF0000">n</b></td>
+						<td class="vrijednosti">&nbsp;i &nbsp;<b style="color:#0000FF">i</b> n</td>
+					</tr>
+					<tr>
+						<td><b style="color:#FF0000">n</b></td>
+						<td><b style="color:#FF0000">i</b></td>
+						<td class="vrijednosti">n <b style="color:#0000FF">i</b> &nbsp;i</td>
+					</tr>
+					<tr>
+						<td>n</td>
+						<td>n</td>
+						<td class="vrijednosti">n n n</td>
+					</tr>
+				</table>
+
+					<p>
+				Taj iskaz će zapisam u PDNO-u izgledati ovako: (<i>P</i>∧<i>Q</i>)∨(<i>P</i>∧¬<i>Q</i>)∨(¬<i>P</i>∧<i>Q</i>).
+				Zašto? Zato jer smo u stvari samo zapisali sve slučajeve u kojima je ta disjunkcija 
+				istinita. Dakle, prvo što moramo provjeriti, to je u kojim slučajevima je neki iskaz
+				<b style="color:#0000FF">istinit</b>. Nakon toga gledamo u lijevu stranu tablice, kako
+				bismo isčitali pod kojim <b style="color:#FF0000">uvjetima</b> je taj iskaz istinit.
+				pogledajmo prvi disjunkt: "(<i>P</i>∧<i>Q</i>)". Njega smo isčitali iz prvog retka, 
+				u kojem su i <i>P</i> i <i>Q</i> istiniti. Nakon toga se selimo u drugi red, kako bismo
+				isčitali istinitosne vrijednosti drugog disjunkta za taj iskaz. One su takve da je 
+				<i>P</i> istinito, a <i>Q</i> neistinito i to ćemo zato zapisati ovako: "(<i>P</i>∧¬<i>Q</i>)".
+				Na kraju gledamo u treći red u kojem imamo istinitu vrijednost i zapisujemo vrijednosti
+				koje nalazimo u njemu, a one su takve da je <i>P</i> neistinito, a <i>Q</i> istinito i 
+				to ćemo naravno zapisati na ovaj način: "(¬<i>P</i>∧<i>Q</i>)".
+			</p>
+
+			<p>
+				No kako bi zapisali PDNO ako bi nam nekim slučajem sve istinitosne vrijednosti bile
+				neistina? To bismo učinili na sljedeći način: (<i>P</i>∧¬<i>P</i>)∧(<i>Q</i>∧¬<i>Q</i>).
+				Zašto bismo to zapisali na takav način? iz jednostavnog razloga, a taj je da ako mo za
+				sve moguće kombinacije dobili neistinitu vrijednost, onda to znači da taj iskaz ne može
+				biti istinit ni pod kojim uvjetima. Pošto je nemoguće da <i>P</i> i <i>Q</i> mogu u isto
+				vrijeme biti i istiniti i neistiniti, onda na taj način izražavamo neistinitost čitavog
+				iskaza.
+			</p>
+
+			<h3>
+				Potpun konjunktivni normalni oblik
+			</h3>
+
+			<p>
+				Definicija za potpun konjunktivni normalni oblik je dakako, potpuno obrnuta od one za 
+				disjunktivni. PKNO je niz konjunkata, od kojih je svaki niz disjunkata. Kada želimo 
+				izraziti neki iskaz u PKNO-u, izražavamo ga na potpuno suprotan način od onog kako 
+				ga izražavamo u PDNO-U. Idemo odmah pogledati u tablicu:
+			</p>
+				<table>
+					<tr>
+						<td><i>P</i></td>
+						<td><i>Q</i></td>
+						<td class="Vrijednosti"><i>P</i>∨<i>Q</i></td>
+					</tr>
+					<tr>
+						<td>i</td>
+						<td>i</td>
+						<td class="vrijednosti">i &nbsp;i &nbsp;i</td>
+					</tr>
+					<tr>
+						<td>i</td>
+						<td>n</td>
+						<td class="vrijednosti">i &nbsp;i &nbsp;n</td>
+					</tr>
+					<tr>
+						<td>n</td>
+						<td>i</td>
+						<td class="vrijednosti">n i &nbsp;i</td>
+					</tr>
+					<tr>
+						<td><b style="color:#FF0000">n</b></td>
+						<td><b style="color:#FF0000">n</b></td>
+						<td class="vrijednosti">n <b style="color:#0000FF">n</b> n</td>
+					</tr>
+				</table>
+
+			<p>
+				Kako za PKNO vrijedi sve obrnuto od PDNO onda će taj iskaz zapisan u PKNO izgledati
+				ovako: (P∨Q). U ovom slučaju gledamo samo one slučajeve u kojima je iskaz 
+				<b style="color:#0000FF">neistinit</b>, i prepisujemo ih redom (u ovom slučaju imamo
+				samo jedan takav) i to tako da izvrnemo njihove istinitosne vrijednosti. Dakle, kako
+				su u slučaju kada je cijela konjunkcija neistinita i <i>P</i> i <i>Q</i> neistiniti, 
+				izvrčemo njihove istinitosne vrijednosti i zapisujemo ih kao istinite. 
+			</p>
+
+			<p>
+				I to je cijela mudrost izražavanja iskaza samo uz pomoć ta tri poveznika.
+			</p>
+		</div>
+	</div>
+
+</body>
+
+</html>
